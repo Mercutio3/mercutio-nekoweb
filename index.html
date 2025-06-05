@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mercutio's Dream</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="javascript/index.js"></script>
+    </head>
+    <body onload="generateCalendar('calendarDiv')">
+        <header>
+            <h1 class="crt" id="maintitle"> - mercutio. - </h1>
+        </header>
+        <div class="layout-container">
+            <aside class="column left">
+                <section id="navbar">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/navicon.png" alt=""></sub> Navigation</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p>Click on a door to access it!</p>
+                            <nav>
+                                <div class="nexusWrapper">
+                                    <div class="nexusTrack" id="nexusTrack">
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="images/doors/door-home.png" alt="Home">
+                                            <p class="doorLabel">Home</p>
+                                        </div>
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="images/doors/door-about.webp" alt="About Me">
+                                            <p class="doorLabel">About Me</p>
+                                        </div>
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="images/doors/door-travel.png" alt="Travel Log">
+                                            <p class="doorLabel">Travel Log</p>
+                                        </div>
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="images/doors/door-blog.webp" alt="Blog">
+                                            <p class="doorLabel">Blog</p>
+                                        </div>
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="images/doors/door-dream.webp" alt="Dream Diary">
+                                            <p class="doorLabel">Dream Diary</p>
+                                        </div>
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="images/doors/door-shrines.webp" alt="Shrines">
+                                            <p class="doorLabel">Shrines</p>
+                                        </div>
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="images/doors/door-resources.webp" alt="Resources">
+                                            <p class="doorLabel">Resources</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="navButs">
+                                    <button id="navButL" class="navBut">< <</button>
+                                    <button id="navButR" class="navBut">> ></button>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </section>  
+                <section id="visitor-count">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/visitoricon.png" alt=""></sub> Visitor Count</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p>One tortillion</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="status">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/statusicon.png" alt=""></sub> Status</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p>Mood: Poopy</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="pompompurin">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text">Pompompurin</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p>HAVE YOU SEEN THIS DOG?</p>
+                            <img src="images/Sanrio_Characters_Pompompurin_Image006.webp" width="200px" height="200px">
+                            <p>Now you have :D</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="links">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/linksicon.png" alt=""></sub> Links</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p><a href="https://discordapp.com/users/387394475036770307" target="_blank">Discord</a></p>
+                            <p><a href="https://myanimelist.net/profile/Mercutio3" target="_blank">MyAnimeList</a></p>
+                            <p><a href="https://github.com/Mercutio3" target="_blank">GitHub</a></p>
+                        </div>
+                    </div>
+                </section>
+                <section id="webrings">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text">Nekolink</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p>yeahhhh </p>
+                        </div>
+                    </div>
+                </section>
+                <section id="communities">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text">Communities</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p>peepee poopoo</p>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+            
+            <div class="column middle">
+                <main>
+                    <section class="homePage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 30;">>_ welcome to my website!</h4>
+                            <p>Hello all, I’m Mercutio! Also known online as Sanster, 
+                                Andromeda, or Madeline. This website is a place where 
+                                I can write or post about myself, things that I like, 
+                                or things happening in my life. My “little corner of the 
+                                Internet”, as people say.</p>
+                            <p>I know I could still do this on traditional social media, 
+                                but they’ve all felt very same-ey to me lately, and I 
+                                find the lack of customization quite sad. The amount 
+                                of stupid AI features being forced onto me also helped 
+                                me make up my mind and step away from them for good. I 
+                                like the idea of having a page that reflects my personality 
+                                and likes, without having to constantly worry about it 
+                                looking professional or appealing.</p>
+                            <p>So I decided, might as well make good use of my unemployment 
+                                license (CS Degree) to make this small wish of mine a 
+                                reality. Feel free to look around, and thank you for 
+                                stopping by!</p>
+                            <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>
+                        </div>
+                    </section>
+                    <section class="homePage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 23;">>_ featured content</h4>
+                        </div>
+                    </section>
+                    <section class="homePage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 23;">>_ stamps & buttons</h4>
+                            <br>
+                            <img src="https://gligar.neocities.org/sm.gif">
+                            <img src="https://gligar.neocities.org/pom.png">
+                            <img src="images/stamps/lazer.gif">
+                            <br>
+                            <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button11.gif"></a><!-- button by milkyway.moe -->
+                            <img src="images/buttons/powered.gif">
+                            <img src="images/buttons/wikipedia_ru.gif">
+                            <img src="images/buttons/hellontheweb.gif">
+                            <img src="https://anlucas.neocities.org/geocitieswww.gif">
+                            <img src="images/buttons/nclinux.gif">
+                            <img src="images/buttons/wii.gif">
+                            <img src="images/buttons/cssdif.gif">
+                            <img src="images/buttons/got_html.gif">
+                            <img src="https://anlucas.neocities.org/budgie.gif">
+                            <img src="https://anlucas.neocities.org/bunbrowser.gif">
+                            <img src="images/buttons/lain.gif">
+                            <img src="images/buttons/cinna.gif">
+                            <img src="images/buttons/ds.jpg">
+                            <img src="images/buttons/copland.png">
+                        </div>
+                    </section>
+                    <section class="homePage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 15;">>_ WEBRINGS!</h4>
+                        </div>
+                    </section>
+                    <section class="homePage">
+                        <div class="fakeScreen" style="height: 200px; overflow: auto;">
+                            <h4 class="typeWriter" style="--characters: 15;">>_ changelog</h4>
+                            <p><strong><u>02/06/2025:</u></strong> Changelog moved over to the actual website.</p>
+                            <p><strong><u>01/06/2025:</u></strong> Implemented music player! Also added small icons to some side sections and custom cursors, as well as fixing the CRT screen door effect. Most importantly, added Pompompurin.</p>
+                            <p><strong><u>31/05/2025:</u></strong> Intro section for home page written and added. Middle sections given a terminal-inspired CSS look. Header flicker effect added. Tentative side section layout added.</p>
+                            <p><strong><u>30/05/2025:</u></strong> Planning out general layout and content of the website on a Google Doc (lol). Changed clock to an embed iframe clock, keeping both for now.</p>
+                            <p><strong><u>28/05/2025:</u></strong> New icon. Windows-98 styling for side sections. JavaScript for yellow-border hover effect and clock experiment.</p>
+                            <p><strong><u>27/05/2025:</u></strong> Website created.</p>
+                        </div>
+                    </section>
+
+                    <section class="aboutPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 13;">>_ about me</h4>
+                        </div>
+                    </section>
+                    <section class="aboutPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 16;">>_ the basics!</h4>
+                            <div class="splitScreen">
+                                <div class="abtCol">
+                                    <p>Quick Facts:</p>
+                                    <ul>
+                                        <li>Age: 22</li>
+                                        <li>Height: 1.68 (5'6" in freedom units)</li>
+                                        <li>Weight: About 6 watermelons</li>
+                                        <li>Birthday: 11/01</li>
+                                        <li>Nationality: MEX</li>
+                                        <li>Languages: Spanish, English, and German</li>
+                                        <li>Blood Type: O+</li>
+                                        <li>Zodiac: Capricorn ☼, Taurus ☾, Aquarius ↑</li>
+                                        <li>MBTI: INTP</li>
+                                        <li>Catchphrase: </li>
+                                    </ul>
+                                </div>
+                                <div class="abtCol">
+                                    <img id="mcSkin" src="images/mcskin.gif">
+                                    <p style="text-align: center;">This is my Minecraft skin, which kinda looks like what I look like IRL. Just imagine longer hair, earrings, and a nostril piercing.</p>
+                                </div>
+                            </div>
+                            
+                            <p>Likes:</p>
+                            <ul>
+                                <li>Public transport; rails in particular; subways even more in particular</li>
+                                <li>Cloudy weather</li>
+                                <li>Pompompurin</li>
+                                <li>Beer</li>
+                                <li>Cats, Dogs, & Bunnies</li>
+                            </ul>
+                            <p>Dislikes:</p>
+                            <ul>
+                                <li>Outdoor crowds</li>
+                                <li>Sticky things</li>
+                                <li>Belgium</li>
+                                <li>Clubbing</li>
+                            </ul>
+                            <p>Some fun facts:</p>
+                            <ul>
+                                <li>The first programming language I learned was Java :/</li>
+                            </ul>
+                            
+                        </div>
+                    </section>
+                    <section class="aboutPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 24;">>_ my favorites list</h4>
+                        </div>
+                    </section>
+                    <section class="resourcesPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 14;">>_ resources</h4>
+                            <p style="text-align: center; font-size: 16px;"><strong>~ Sharing is caring! ~</strong></p>
+                            <p>Because good things are even better when shared. 
+                                Here is a list of resources I used to create this website.</p>
+                            <ul>
+                                <li>HTML, CSS, JavaScript
+                                    <ul>
+                                        <li>Pretty self explanatory.</li>
+                                    </ul>
+                                </li>
+                                <li>JQuery
+                                    <ul>
+                                        <li>Streamlines a lot of JavaScript event handling. I find it faster and cleaner than vanilla JS.</li>
+                                    </ul>
+                                </li>
+                                <li>W3Schools
+                                    <ul>
+                                        <li>Tons of useful tutorials for learning or refreshing your knowledge of HTML/CSS/JS.</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resourceLink" href="https://jdan.github.io/98.css/" target="_blank">98.css</a>
+                                    <ul>
+                                        <li>CSS library to easily recreate windows-98-styled windows!</li>
+                                    </ul>
+                                </li>
+                                <li>CSS-Tricks
+                                    <ul>
+                                        <li>"A website about making websites."</li>
+                                        <li>This is where I got the <a class="resourceLink" href="https://css-tricks.com/snippets/css/typewriter-effect/" target="_blank">Typewriter animation</a> and the <a class="resourceLink" href="https://css-tricks.com/old-timey-terminal-styling/" target="_blank"> old-timey terminal window styling</a>.</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resourceLink" href="https://loveberry.nekoweb.org/resources/snippets" target="_blank">LoveBerry</a>
+                                    <ul>
+                                        <li>A modified version of this was used for the Music Player. This website also has other useful code snippets and is super-cool overall!!</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resourceLink" href="https://win98icons.alexmeub.com/" target="_blank">W98 Icons</a>
+                                    <ul>
+                                        <li>PNG collection of all windows 98 icons in different sizes!</li>
+                                        <li>Used for the little icons on the side sections.</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resourceLink" href="https://aleclownes.com/2017/02/01/crt-display.html" target="_blank">Aleclownes</a>
+                                    <ul>
+                                        <li>Used for the CRT screen door effect in the center sections and the color separation effect in the main header.</li>
+                                    </ul>
+                                </li>
+                                <li>VSCode + LiveServer
+                                    <ul>
+                                        <li>My text editor of choice. Open-source and cross-platform. Does the job.</li>
+                                        <li>LiveServer is a VSCode extension that allows you to host a local server and see your changes in real-time. Not essential but saves time.</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resourceLink" href="https://ezgif.com/" target="_blank">Ezgif</a>
+                                    <ul>
+                                        <li>Online GIF editor. Lots of useful tools like cropping, flipping, compressing, and converting to/from MP4.</li>
+                                        <li>Used for Ame-Chan's icon in the music player and the Minecraft skin gif.</li>
+                                    </ul>
+                                </li>
+                                <li>Fonts
+                                    <ul>
+                                        <li><strong>TrixieCyrG-Plain:</strong> Contrary to popular belief, this is the actual font used in the “Serial Experiments Lain” title card, not LoveLetter TW.</li>
+                                        <li><strong>LoveLetter TW</strong> is still used for the central section titles, though ;P</li>
+                                    </ul>
+                                </li>
+                                <li>Buttons
+                                    <ul>
+                                        <li>Those little 88x31 gifs you see all over sites like mine, very nostalgic!</li>
+                                        <li><a class="resourceLink" href="https://anlucas.neocities.org/88x31Buttons" target="_blank">Anlucas</a></li>
+                                        <li><a class="resourceLink" href="https://cyber.dabamos.de/88x31/index.html" target="_blank">The 88x31 GIF Collection</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li>Stamps
+                                    <ul>
+                                        <li><a class="resourceLink" href="https://gligar.neocities.org/" target="_blank">Gligar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </main>
+            </div>
+
+            <aside class="column right">
+                <section class="music-player">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/titlebaricon.png" alt=""></sub> Ame-Chan's Jams</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <div class="flex">
+                                <div id="imagestyle"><img class="ic" src="images/amechan.gif" alt=""></div>
+                                <div id="musicplayer">
+                                    <div class="songtitlewindow">
+                                        <div class="flex" style="display: flex;"><marquee scrollamount="4" class="songtitle"></marquee><div class="songtitlearrow"></div></div>
+                                    </div>
+                        
+                                <div class="seeking">
+                                    <div class="current-time">00:00</div>
+                                    <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                                    <div class="total-duration">0:00</div>
+                                </div>
+                        
+                                <table class="controls">
+                                    <tr>
+                                        <td>
+                                            <div class="prev-track"><button class="player-button"><img src="images/prevtrack.png" class="controlimg"></button></div>
+                                        </td>
+                                        <td>
+                                            <div class="playpause-track"><button class="player-button"><img src="images/playpause.png" class="controlimg"></button></div>
+                                        </td>
+                                        <td>
+                                            <div class="next-track"><button class="player-button"><img src="images/nexttrack.png" class="controlimg"></button></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <audio id="music" src=""></audio> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="language-switcher">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/languageicon.png" alt=""></sub> Language Switcher</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <button>EN</button>
+                            <button>ES</button>
+                            <button>DE</button>
+                        </div>
+                    </div>
+                </section>
+                <section id="clock-calendar">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/timedateicon.png" alt=""></sub> My Time</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p id="clockText">Testing right section :3</p>
+                            <iframe src="https://free.timeanddate.com/clock/i9x1w5ps/n308/tlde/fn8/tct/pct/ta1" frameborder="0" width="111" height="19" allowtransparency="true"></iframe>
+                            <div id="calendarDiv"></div>
+                        </div>
+                    </div>
+                </section>
+                <section id="tamagotchi">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text">Tamagotchi!</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p id="clockText">Coming soon</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="guestbook">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="images/icons/guestbookicon.png" alt=""></sub> Guestbook</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p id="clockText">Coming soon</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="comment-box">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text">Comment Box</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p id="clockText">Coming soon</p>
+                        </div>
+                    </div>
+                </section>
+                <section id="x-daily">
+                    <div class="window">
+                        <div class="title-bar">
+                            <div class="title-bar-text">X of the Day</div>
+                            <div class="title-bar-controls">
+                            <button aria-label="Minimize"></button>
+                            <button aria-label="Maximize"></button>
+                            <button aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <div class="window-body">
+                            <p id="clockText">Coming soon</p>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+        
+        <footer>
+            <h3 id="quote" class="crt" style="color: white; text-align: center;">"What isn't remembered never happened."</h3>
+            <p>v0.1</p>
+            <p>This website is a personal <strong>non-profit</strong> project!</p>
+            <p>&copy2025 Mercutio. Not really copyrighted, but it feels cool to say :P</p>
+        </footer>
+    </body>
+</html>
