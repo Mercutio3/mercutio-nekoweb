@@ -8,13 +8,33 @@
     src: url('../fonts/Lovelt__.ttf');
 }
 
+@font-face {
+    font-family: minecraftFont;
+    src: url('../fonts/Minecraftia.ttf');
+}
+
 body {
-    background-image: url(../images/backgrounds/endportal.gif);
+    transition: none;
     background-repeat: no-repeat;
-    background-size: cover;     /* or 'contain' or a specific size */
+    background-size: cover;
     background-attachment: fixed;
     background-position: center center;
     cursor: url('../images/cursors/nso_cursor.png'), auto;
+}
+
+#bg-fade-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 2s ease;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat
 }
 
 a {
@@ -23,11 +43,17 @@ a {
 
 .navBut {
     cursor: url('../images/cursors/nso_point.png'), auto;
+    min-width: 50px;
+    display: block;
+    font-size: 14px;
 }
 
 
 section {
-    margin: 15px auto;
+  margin: 15px auto;
+}
+section:first-child {
+  margin-top: 0;
 }
 
 h1, h3 {
@@ -45,7 +71,7 @@ h4 {
 
 .fakeScreen {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     text-shadow: 0 0 5px #C8C8C8;
     background-color: #151515;
@@ -474,12 +500,6 @@ input[type=range]::-moz-range-track {
   font-weight: bold;
 }
 
-.navBut {
-    min-width: 50px;
-    display: block;
-    font-size: 14px;
-}
-
 .navButs {
   display: flex;
   align-items: center;
@@ -568,8 +588,8 @@ input[type=range]::-moz-range-track {
 
 .funFactContainer {
   display: flex;
-    align-items: center;
-    height: 270px;
+  align-items: center;
+  height: 270px;
 }
 
 .funFactBox {
@@ -593,4 +613,149 @@ input[type=range]::-moz-range-track {
   width: 250px;
   margin: 10px auto;
   display: block;
+}
+
+.minecraftPage .fakeScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mc-city-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#mc-city-name {
+  min-width: 160px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#mc-img-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#mc-img {
+  max-width: 350px;
+  max-height: 250px;
+  border: 2px solid #bbb;
+  border-radius: 5px;
+}
+
+#mc-img-caption {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+#button-carousel-container {
+  width: calc(225px + 775px + 225px);
+  overflow: hidden;
+  background: transparent;
+  margin: 0 auto 1rem auto;
+  height: 48px;
+  position: relative;
+}
+
+#button-carousel-track {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: 48px;
+  will-change: transform;
+}
+
+#button-carousel-track img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+#button-carousel-container {
+  margin-bottom: 0;
+}
+
+.layout-container {
+  margin-top: 0;
+}
+
+#blog-book-bg {
+  background: url("../images/bookandquill.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* or 'cover' for full coverage */
+  min-height: 487px;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: minecraftFont;
+}
+
+.blog-book {
+  font-family: minecraftFont;
+  display: flex;
+  width: 700px;
+  min-height: 350px;
+  overflow: hidden;
+  color: #3a2f0b;
+}
+
+.blog-toc, .blog-entry {
+  font-family: minecraftFont;
+  color: #3a2f0b;
+}
+.blog-toc {
+  width: 50%;
+  padding: 24px;
+  border-right: 2px solid #c2b280;
+  font-family: minecraftFont;
+  min-height: 403.917px;
+}
+
+.blog-toc h4 {
+  margin-top: 0;
+  font-family: minecraftFont;
+}
+
+.blog-toc ul {
+  list-style: none;
+  padding: 0;
+  font-family: minecraftFont;
+}
+
+.blog-toc li {
+  margin-bottom: 12px;
+  font-family: minecraftFont;
+}
+
+.blog-toc a {
+  text-decoration: underline;
+  color: #6b4f1d;
+  font-weight: bold;
+  cursor: url('../images/cursors/nso_point.png'), auto;
+  font-family: minecraftFont;
+}
+
+.blog-entry {
+  width: 50%;
+  padding: 24px;
+  min-height: 403.917px;
+  font-family: minecraftFont;
+}
+
+.blog-entry h4 {
+  font-family: minecraftFont;
+  margin-top: 0;
 }

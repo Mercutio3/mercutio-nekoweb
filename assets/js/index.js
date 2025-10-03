@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    setSectionBackground("home");
+
     $(".fakeScreen").mouseenter(function(){
         $(this).css("border-color", "yellow");
     })
@@ -6,12 +8,16 @@ $(document).ready(function(){
     $(".fakeScreen").mouseleave(function(){
         $(this).css("border-color", "white");
     })
-    $(function(){
-        $(".typeWriter").addClass("play");
-    })
+    
+    $(".typeWriter").addClass("play");
 
     $(".aboutPage").hide();
     $(".resourcesPage").hide();
+    $(".minecraftPage").hide();
+    $(".travelPage").hide();
+    $(".blogPage").hide();
+    $(".dreamDiaryPage").hide();
+    $(".shrinesPage").hide();
 
     const quoteList = [
         "What isn't remembered never happened.",
@@ -81,8 +87,8 @@ $(document).ready(function(){
         // set an interval of 1000 milliseconds for updating the seek slider
         updateTimer = setInterval(seekUpdate, 1000);
 
-        // move to the next track if the current one finishes playing 
-        curr_track.addEventListener("ended", nextTrack);
+        // move to the next track if the current one finishes playing
+        curr_track.onended = nextTrack;
     }
 
     $(".playpause-track").click(function(){
@@ -133,7 +139,7 @@ $(document).ready(function(){
     function prevTrack() {
         if (track_index > 0)
             track_index -= 1;
-        else track_index = track_list.length;
+        else track_index = track_list.length - 1;
         loadTrack(track_index);
         playTrack();
     }
@@ -219,19 +225,93 @@ $(document).ready(function(){
         const index = (currentIndex - 1 + slides.length) % slides.length;
         switch(index){
             case 0:
+                setSectionBackground("home");
                 $(".homePage").slideDown();
                 $(".aboutPage").slideUp();
+                $(".minecraftPage").slideUp();
+                $(".travelPage").slideUp();
+                $(".blogPage").slideUp();
+                $(".dreamDiaryPage").slideUp();
+                $(".shrinesPage").slideUp();
                 $(".resourcesPage").slideUp();
                 break;
             case 1:
+                setSectionBackground("about");
                 $(".aboutPage").slideDown();
                 $(".homePage").slideUp();
+                $(".minecraftPage").slideUp();
+                $(".travelPage").slideUp();
+                $(".blogPage").slideUp();
+                $(".dreamDiaryPage").slideUp();
+                $(".shrinesPage").slideUp();
                 $(".resourcesPage").slideUp();
                 break;
+            case 2:
+                setSectionBackground("minecraft");
+                $(".minecraftPage").slideDown();
+                $(".homePage").slideUp();
+                $(".aboutPage").slideUp();
+                $(".travelPage").slideUp();
+                $(".blogPage").slideUp();
+                $(".dreamDiaryPage").slideUp();
+                $(".shrinesPage").slideUp();
+                $(".resourcesPage").slideUp();
+                break;
+            case 3:
+                setSectionBackground("travel");
+                $(".travelPage").slideDown();
+                $(".homePage").slideUp();
+                $(".aboutPage").slideUp();
+                $(".minecraftPage").slideUp();
+                $(".blogPage").slideUp();
+                $(".dreamDiaryPage").slideUp();
+                $(".shrinesPage").slideUp();
+                $(".resourcesPage").slideUp();
+                break;
+            case 4:
+                setSectionBackground("blog");
+                $(".blogPage").slideDown();
+                $(".homePage").slideUp();
+                $(".aboutPage").slideUp();
+                $(".minecraftPage").slideUp();
+                $(".travelPage").slideUp();
+                $(".dreamDiaryPage").slideUp();
+                $(".shrinesPage").slideUp();
+                $(".resourcesPage").slideUp();
+                break;
+            case 5:
+                setSectionBackground("dream");
+                $(".dreamDiaryPage").slideDown();
+                $(".homePage").slideUp();
+                $(".aboutPage").slideUp();
+                $(".minecraftPage").slideUp();
+                $(".travelPage").slideUp();
+                $(".blogPage").slideUp();
+                $(".shrinesPage").slideUp();
+                $(".resourcesPage").slideUp();
+                break;
+
             case 6:
+                setSectionBackground("shrines");
+                $(".shrinesPage").slideDown();
+                $(".homePage").slideUp();
+                $(".aboutPage").slideUp();
+                $(".minecraftPage").slideUp();
+                $(".travelPage").slideUp();
+                $(".blogPage").slideUp();
+                $(".dreamDiaryPage").slideUp();
+                $(".resourcesPage").slideUp();
+                break;
+            case 7:
+                setSectionBackground("resources");
                 $(".resourcesPage").slideDown();
                 $(".homePage").slideUp();
                 $(".aboutPage").slideUp();
+                $(".minecraftPage").slideUp();
+                $(".travelPage").slideUp();
+                $(".blogPage").slideUp();
+                $(".shrinesPage").slideUp();
+                $(".dreamDiaryPage").slideUp();
                 break;
         }
     });
@@ -269,6 +349,291 @@ $(document).ready(function(){
         const randomInt2 = Math.floor(Math.random() * factList.length);
         $("#fun-fact").text(factList[randomInt2]);
     });
+
+    const mcGalleryGroups = [
+        {
+            name: "Grug City",
+            description: "Encompassing an area of over a million square meters, Grug City is the largest city and capital of the Minecraft world.",
+            images: [
+                { src: "assets/images/minecraft/grugcity1.png", alt: "Grug City 1" },
+                { src: "assets/images/minecraft/grugcity2.png", alt: "Grug City 2" },
+                { src: "assets/images/minecraft/grugcity3.png", alt: "Grug City 3" },
+            ]
+        },
+        {
+            name: "Sky City",
+            description: "serp iguano",
+            images: [
+                { src: "assets/images/minecraft/skycity1.png", alt: "Sky City 1" },
+                { src: "assets/images/minecraft/skycity2.png", alt: "Sky City 2" },
+                { src: "assets/images/minecraft/skycity3.png", alt: "Sky City 3" },
+            ]
+        },
+        {
+            name: "Snowtown",
+            description: "A cozy medieval city located in the southernmost part of of a large snow biome.",
+            images: [
+                { src: "assets/images/minecraft/snowtown1.png", alt: "Snowtown 1" },
+                { src: "assets/images/minecraft/snowtown2.png", alt: "Snowtown 2" },
+                { src: "assets/images/minecraft/snowtown3.png", alt: "Snowtown 3" },
+            ]
+        },
+        {
+            name: "Savannhattan",
+            description: "The world's financial district; a grid city of impressive skyscrapers built on top of a savanna biome.",
+            images: [
+                { src: "assets/images/minecraft/savannhattan1.png", alt: "Savannhattan 1" },
+                { src: "assets/images/minecraft/savannhattan2.png", alt: "Savannhattan 2" },
+                { src: "assets/images/minecraft/savannhattan3.png", alt: "Savannhattan 3" },
+            ]
+        },
+        {
+            name: "Nieuwe Brugge",
+            description: "A large island city known for its canals. Outside of the main square, the city is constructed exclusively out of blocks available in Minecraft Beta 1.7.3.",
+            images: [
+                { src: "assets/images/minecraft/nieuwebrugge1.png", alt: "Nieuwe Brugge 1" },
+                { src: "assets/images/minecraft/nieuwebrugge2.png", alt: "Nieuwe Brugge 2" },
+                { src: "assets/images/minecraft/nieuwebrugge3.png", alt: "Nieuwe Brugge 3" },
+            ]
+        },
+        {
+            name: "Cienfuegos",
+            description: "A tropical coastal port city straddling both sides of a large bay.",
+            images: [
+                { src: "assets/images/minecraft/cienfuegos1.png", alt: "Cienfuegos 1" },
+                { src: "assets/images/minecraft/cienfuegos2.png", alt: "Cienfuegos 2" },
+                { src: "assets/images/minecraft/cienfuegos3.png", alt: "Cienfuegos 3" },
+            ]
+        },
+        {
+            name: "Schönebeck",
+            description: "",
+            images: [
+                { src: "assets/images/minecraft/schonebeck1.png", alt: "Schönebeck 1" },
+                { src: "assets/images/minecraft/schonebeck2.png", alt: "Schönebeck 2" },
+                { src: "assets/images/minecraft/schonebeck3.png", alt: "Schönebeck 3" },
+            ]
+        },
+        {
+            name: "Himawari",
+            description: "",
+            images: [
+                { src: "assets/images/minecraft/himawari1.png", alt: "Himawari 1" },
+                { src: "assets/images/minecraft/himawari2.png", alt: "Himawari 2" },
+                { src: "assets/images/minecraft/himawari3.png", alt: "Himawari 3" },
+            ]
+        },
+        {
+            name: "Winterfell",
+            description: "A very large castle. Its fortifications are notoriously difficult to invade, especially during the winter months.",
+            images: [
+                { src: "assets/images/minecraft/winterfell1.png", alt: "Winterfell 1" },
+                { src: "assets/images/minecraft/winterfell2.png", alt: "Winterfell 2" },
+                { src: "assets/images/minecraft/winterfell3.png", alt: "Winterfell 3" },
+            ]
+        }
+    ];
+
+    let currentMCGroup = 0;
+    let currentMCImage = 0;
+
+    function renderMCImgGroup() {
+        $("#mc-city-name").text(mcGalleryGroups[currentMCGroup].name);
+        $("#mc-city-desc").text(mcGalleryGroups[currentMCGroup].description);
+        currentMCImage = 0;
+        renderMCImage();
+    }
+
+    function renderMCImage() {
+        const imgData = mcGalleryGroups[currentMCGroup].images[currentMCImage];
+        $("#mc-img").attr("src", imgData.src);
+        $("#mc-img-caption").text(imgData.caption);
+    }
+
+    $("#mc-city-prev").click(function(){
+        currentMCGroup = (currentMCGroup - 1 + mcGalleryGroups.length) % mcGalleryGroups.length;
+        renderMCImgGroup();
+    });
+
+    $("#mc-city-next").click(function(){
+        currentMCGroup = (currentMCGroup + 1) % mcGalleryGroups.length;
+        renderMCImgGroup();
+    });
+
+    $("#mc-img-prev").click(function(){
+        const images = mcGalleryGroups[currentMCGroup].images;
+        currentMCImage = (currentMCImage - 1 + images.length) % images.length;
+        renderMCImage();
+    });
+
+    $("#mc-img-next").click(function(){
+        const images = mcGalleryGroups[currentMCGroup].images;
+        currentMCImage = (currentMCImage + 1) % images.length;
+        renderMCImage();
+    });
+
+    renderMCImgGroup();
+
+    function setSectionBackground(section) {
+        var body = $("body");
+        var overlay = $("#bg-fade-overlay");
+        var newBg = "";
+
+        switch(section) {
+            case "home":
+                newBg = "url('assets/images/backgrounds/home-bg.gif')";
+                break;
+            case "about":
+                newBg = "url('assets/images/backgrounds/about-bg.webp')";
+                break;
+            case "minecraft":
+                newBg = "url('assets/images/backgrounds/minecraft-bg.png')";
+                break;
+            case "travel":
+                newBg = "url('assets/images/backgrounds/travel-bg.jpg')";
+                break;
+            case "blog":
+                newBg = "url('assets/images/backgrounds/blog-bg.jpg')";
+                break;
+            case "dream":
+                newBg = "url('assets/images/backgrounds/dream-bg.jpg')";
+                break;
+            case "shrines":
+                newBg = "url('assets/images/backgrounds/shrines-bg.jpg')";
+                break;
+            case "resources":
+                newBg = "url('assets/images/backgrounds/resources-bg.webp')";
+                break;
+        }
+
+        overlay.css("background-image", newBg);
+        overlay.css("opacity", 1);
+
+        setTimeout(function() {
+            body.css("background-image", newBg);
+            overlay.css("opacity", 0);
+        }, 2000);
+    }
+
+    const buttonImages = [
+        "antinft.gif",
+        "buttcertificate.gif",
+        "chocoloaf.gif",
+        "chrome-suck.gif",
+        "cinna.gif",
+        "copland.png",
+        "cssdif.gif",
+        "ditchsocial.gif",
+        "dream-chobits.gif",
+        "dream-diary.gif",
+        "drpepper.gif",
+        "ds.jpg",
+        "evangelion.gif",
+        "eyes.gif",
+        "flipnote.png",
+        "geocitieswww.gif",
+        "got_html.gif",
+        "hatemac.jpg",
+        "hellontheweb.gif",
+        "homebrew.png",
+        "insanity.gif",
+        "lain.gif",
+        "lain2.gif",
+        "lurk-n-leech.gif",
+        "mews.gif",
+        "minecraft.gif",
+        "nclinux.gif",
+        "newgrounds.gif",
+        "newlambda.gif",
+        "noodle.gif",
+        "pictochat.gif",
+        "plasticlove.gif",
+        "powered.gif",
+        "powernavi.gif",
+        "ralseismokingadart.gif",
+        "rar_whit_move.gif",
+        "rhc.gif",
+        "scottgames.gif",
+        "slava.gif",
+        "sm_fever_button.gif",
+        "stardew_valley.gif",
+        "stockinganarchy.png",
+        "temptationstairway.png",
+        "train.gif",
+        "vocaloid.gif",
+        "wii.gif",
+        "wikipedia_ru.gif",
+        "wikipedia.gif",
+        "windose.png",
+        "yumenikki2.gif",
+        "yumenikki3.gif"
+    ]
+
+    shuffle(buttonImages);
+    const $track = $("#button-carousel-track");
+    buttonImages.forEach(img => {
+        const $img = $(`<img src="assets/images/buttons/${img}" alt="${img}"/>`);
+        $track.append($img);
+    });
+
+    buttonImages.forEach(img => {
+        const $img = $(`<img src="assets/images/buttons/${img}" alt="${img}"/>`);
+        $track.append($img);
+    });
+
+    let scrollPos = 0;
+    function autoScrollCarousel() {
+      scrollPos += 1;
+      if (scrollPos >= $track[0].scrollWidth / 2) scrollPos = 0;
+      $track.css("transform", `translateX(-${scrollPos}px)`);
+      requestAnimationFrame(autoScrollCarousel);
+    }
+    autoScrollCarousel();
+
+    const purinCount = 11;
+    const purinImages = [];
+    for(let i = 1; i <= purinCount; i++) {
+        purinImages.push(`assets/images/pompompurin/purin${i}.webp`);
+    }
+    shuffle(purinImages);
+    let currentPurinIndex = 0;
+    function showPurinImg() {
+        $("#pompompurin-img").attr("src", purinImages[currentPurinIndex]);
+    }
+
+    setInterval(function() {
+        currentPurinIndex = (currentPurinIndex + 1) % purinImages.length;
+        showPurinImg();
+    }, 3000);
+
+    showPurinImg();
+
+    const blogEntries = {
+        welcome: {
+            title: "Welcome to my Blog!",
+            content: `<p>For someone who doesn't speak much, I do have a lot to say sometimes.</p>
+                      <p>This section is a space for me to write longer thinkpieces about whatever is on my mind or whatever's been going on in my life lately. Not really a diary, since one entry won't correspond to one day, and it might take me mutiple days or weeks to finish an entry.</p>
+                      <p>Use the table of contents on the left page to browse through my entries.</p>
+                      <p>As always, thank you for reading! —Anja ~ ♪</p>`
+        },
+        entry1: {
+            title: "My First Blog Post",
+            content: "<p>Hello</p>"
+        },
+        entry2: {
+            title: "My second entry",
+            content: "<p>hola</p>"
+        }
+    };
+
+    $("#blog-toc-list a").click(function(e) {
+        e.preventDefault();
+        const entryId = $(this).data("entry");
+        const entry = blogEntries[entryId];
+        if(entry) {
+            $("#blog-entry-content").html(`<h4 style="text-align: center;">${entry.title}</h4>${entry.content}`);
+        }
+    })
 
 })
 
@@ -336,3 +701,10 @@ function generateCalendar(containerId) {
 }
 
 generateCalendar("calendarDiv");
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+}

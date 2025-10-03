@@ -11,9 +11,13 @@
         <script src="assets/js/index.js"></script>
     </head>
     <body onload="generateCalendar('calendarDiv')">
+        <div id="bg-fade-overlay"></div>
         <header>
             <h1 class="crt" id="maintitle"> - mercutio. - </h1>
         </header>
+        <div id="button-carousel-container">
+            <div id="button-carousel-track"></div>
+        </div>
         <div class="layout-container">
             <aside class="column left">
                 <section id="navbar">
@@ -40,11 +44,15 @@
                                             <p class="doorLabel">About Me</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-travel.png" alt="Travel Log">
+                                            <img class="doorImg" src="assets/images/doors/door-minecraft.webp" alt="Minecraft World">
+                                            <p class="doorLabel">MC World</p>
+                                        </div>
+                                        <div class="door-slide">
+                                            <img class="doorImg" src="assets/images/doors/door-travel.webp" alt="Travel Log">
                                             <p class="doorLabel">Travel Log</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-blog.webp" alt="Blog">
+                                            <img class="doorImg" src="assets/images/doors/door-blog.png" alt="Blog">
                                             <p class="doorLabel">Blog</p>
                                         </div>
                                         <div class="door-slide">
@@ -111,7 +119,7 @@
                         </div>
                         <div class="window-body">
                             <p>HAVE YOU SEEN THIS DOG?</p>
-                            <img src="assets/images/Sanrio_Characters_Pompompurin_Image006.webp" width="200px" height="200px">
+                            <img id="pompompurin-img" src="" width="200px" height="200px">
                             <p>Now you have :D</p>
                         </div>
                     </div>
@@ -176,6 +184,13 @@
                                 I can write or post about myself, things that I like, 
                                 or things happening in my life. My “little corner of the 
                                 Internet”, as people say.</p>
+                            <div style="text-align: center;">
+                                <img src="assets/images/strawberry.gif" style="margin: 0 auto;" alt="Strawberry", width="35" height="35">
+                                <img src="assets/images/strawberry.gif" style="margin: 0 auto;" alt="Strawberry", width="35" height="35">
+                                <img src="assets/images/strawberry.gif" style="margin: 0 auto;" alt="Strawberry", width="35" height="35">
+                                <img src="assets/images/strawberry.gif" style="margin: 0 auto;" alt="Strawberry", width="35" height="35">
+                                <img src="assets/images/strawberry.gif" style="margin: 0 auto;" alt="Strawberry", width="35" height="35">
+                            </div>
                             <p>I know I could still do this on traditional social media, 
                                 but they’ve all felt very same-ey to me lately, and I 
                                 find the lack of customization quite sad. The amount 
@@ -192,8 +207,17 @@
                         </div>
                     </section>
                     <section class="homePage">
-                        <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 23;">>_ featured content</h4>
+                        <div class="splitScreen">
+                            <div class="abtCol">
+                                <div class="fakeScreen">
+                                    <h4 class="typeWriter" style="--characters: 17;">>_ new content</h4>
+                                </div>
+                            </div>
+                            <div class="abtCol">
+                                <div class="fakeScreen">
+                                    <h4 class="typeWriter" style="--characters: 20;">>_ what i'm up to</h4>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section class="homePage">
@@ -206,22 +230,10 @@
                             <img src="assets/images/stamps/physmed.png">
                             <img src="assets/images/stamps/nyancat.gif">
                             <img src="assets/images/stamps/kitty.gif">
+                            <img src="assets/images/stamps/cocaine.png">
                             <br><br>
                             <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button11.gif"></a><!-- button by milkyway.moe -->
-                            <img src="assets/images/buttons/powered.gif">
-                            <img src="assets/images/buttons/wikipedia_ru.gif">
-                            <img src="assets/images/buttons/hellontheweb.gif">
-                            <img src="https://anlucas.neocities.org/geocitieswww.gif">
-                            <img src="assets/images/buttons/nclinux.gif">
-                            <img src="assets/images/buttons/wii.gif">
-                            <img src="assets/images/buttons/cssdif.gif">
-                            <img src="assets/images/buttons/got_html.gif">
-                            <img src="https://anlucas.neocities.org/budgie.gif">
-                            <img src="https://anlucas.neocities.org/bunbrowser.gif">
-                            <img src="assets/images/buttons/lain.gif">
-                            <img src="assets/images/buttons/cinna.gif">
-                            <img src="assets/images/buttons/ds.jpg">
-                            <img src="assets/images/buttons/copland.png">
+
                         </div>
                     </section>
                     <section class="homePage">
@@ -232,6 +244,12 @@
                     <section class="homePage">
                         <div class="fakeScreen" style="height: 200px; overflow: auto;">
                             <h4 class="typeWriter" style="--characters: 15;">>_ changelog</h4>
+                            <p><strong><u>03/10/2025:</u></strong> Added more Pompompurin images, scaffolded Blog section.</p>
+                            <p><strong><u>02/10/2025:</u></strong> Added button carousel.</p>
+                            <p><strong><u>30/09/2025:</u></strong> Added backgrounds for each section (with transitions) and Tamanotchi. Also created an animation for a future Nekolink.</p>
+                            <p><strong><u>29/09/2025:</u></strong> Back from a very long hiatus! Scaffolded a new Minecraft World section.</p>
+                            <p><strong><u>06/06/2025:</u></strong> Added a bunch of buttons.</p>
+                            <p><strong><u>05/06/2025:</u></strong> Created GitHub repo. Greatly expanded the about section.</p>
                             <p><strong><u>02/06/2025:</u></strong> Changelog moved over to the actual website.</p>
                             <p><strong><u>01/06/2025:</u></strong> Implemented music player! Also added small icons to some side sections and custom cursors, as well as fixing the CRT screen door effect. Most importantly, added Pompompurin.</p>
                             <p><strong><u>31/05/2025:</u></strong> Intro section for home page written and added. Middle sections given a terminal-inspired CSS look. Header flicker effect added. Tentative side section layout added.</p>
@@ -243,21 +261,17 @@
 
                     <section class="aboutPage">
                         <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 13;">>_ about me</h4>
-                        </div>
-                    </section>
-                    <section class="aboutPage">
-                        <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 16;">>_ the basics!</h4>
+                            <h4 class="typeWriter" style="--characters: 29;">>_ about me !</h4>
+                            <p>With lots of scrollables because I love to write about myself :P</p>
                             <div class="splitScreen">
                                 <div class="abtCol">
                                     <p><strong>Quick Facts:</strong></p>
                                     <ul>
-                                        <li>Name: Mercutio</li>
-                                        <li>Nickname: Ham</li>
+                                        <li>Name: Anja</li>
+                                        <li>Nickname: Mercutio</li>
                                         <li>Age: 22</li>
-                                        <li>Gender: I have one</li>
-                                        <li>Height: 1.68 (5'6" in freedom units)</li>
+                                        <li>Gender: Girl 🏳️‍⚧️</li>
+                                        <li>Height: 1.68m (5'6" in freedom units)</li>
                                         <li>Weight: About 6 watermelons</li>
                                         <li>Birthday: January 11th</li>
                                         <li>Nationality: MEX</li>
@@ -265,7 +279,7 @@
                                         <li>Blood Type: O+</li>
                                         <li>Zodiac: Capricorn ☼, Taurus ☾, Aquarius ↑</li>
                                         <li>MBTI: INTP</li>
-                                        <li>Catchphrase: </li>
+                                        <li>Passtimes: Guitar, daydreaming, Minecraft, coding, and writing</li>
                                     </ul>
                                 </div>
                                 <div class="abtCol">
@@ -287,7 +301,7 @@
                                 <div class="abtCol">
                                     <p><strong>Dislikes:</strong></p>
                                     <ul>
-                                        <li>Outdoor crowds</li>
+                                        <li>Crowds</li>
                                         <li>Sticky things</li>
                                         <li>Belgium</li>
                                         <li>Clubbing</li>
@@ -300,7 +314,7 @@
                                     <div class="funFactContainer">
                                         <div class="funFactBox">
                                             <p id="fun-fact">
-                                                Click on the Gangnam-Styling Rei Chiquita to see a fun fact about me!
+                                                Click on the Gangnam-Styling Rei Chiquita to see fun facts about me!
                                                 <br>
                                                 ->
                                             </p>
@@ -314,8 +328,126 @@
                         </div>
                     </section>
                     <section class="aboutPage">
+                        <div class="splitScreen">
+                            <div class="abtCol">
+                                <div class="fakeScreen">
+                                    <h4 class="typeWriter" style="--characters: 18;">>_ my interests</h4>
+                                    <p><b><strong>Videogames:</strong></b> Minecraft, Terraria, OMORI, Celeste, Stardew Valley, Yume Nikki, Undertale, TF2, Half-Life Franchise, FNAF, Super Mario Galaxy</p>
+                                    <p><b><strong>Animanga:</strong></b> Evangelion, Serial Experiments Lain, Chainsaw Man, Cowboy Bebop, Madoka Magica, Sailor Moon, Princess Mononoke, Code Geass, Nana, Horimiya, anything by Tatsuki Fujimoto</p>
+                                    <p><b><strong>Music (Genres):</strong></b> Rock (Classic, Alternative, Latin American), City Pop, J-Pop, Dreampop, Breakcore, Video Game Soundtracks, Vocaloid, Electronic</p>
+                                    <p><b><strong>Music (Artists):</strong></b> The Beatles, Daft Punk, Ado, Arctic Monkeys, ABBA, Mitski, Invisible, Fleetwood Mac, Casiopea, Soda Stereo, Pink Floyd, Caifanes, Lamp, Ichiko Aoba</p>
+                                    <p><b><strong>Books:</strong></b> One Hundred Years of Solitude, The Grapes of Wrath, Hamlet, Don Quixote, 1984, Wuthering Heights</p>
+                                </div>
+                            </div>
+                            <div class="abtCol">
+                                <div class="fakeScreen">
+                                    <h4 class="typeWriter" style="--characters: 21">>_ quiz results :3</h4>
+                                    <a href="https://www.theotaku.com/quizzes/view/3096/which_madoka_magica_girl_are_you%3F"><img border="0" src="http://www.theotaku.com/guru_results/3096_Homura_Akemi.jpg" alt="Which Madoka Magica Girl Are You?" /><br /></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                    <section class="aboutPage">
                         <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 24;">>_ my favorites list</h4>
+                            <h4 class="typeWriter" style="--characters: 9;">>_ Anja</h4>
+                            
+                        </div>
+                    </section>
+
+                    <section class="minecraftPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 29;">>_ my minecraft world :3</h4>
+                            <p>
+                                I have been playing Minecraft since 2011. No other game has had such a profound impact in my life.
+                                I love playing it both alone and with friends. 
+                            </p>
+                            <p>
+                                Interestingly, though, despite having played for so long, I had yet to commit to a single world for more than a few months.
+                                This didn't bother me, though. It kept the game feeling fresh and made it easy to experience new updates' content; this was best exemplified by a series of yearly SMPs from 2017 to 2023.
+                                Many of my warmest memories in the game come from these SMPs; at its peak (Seasons 4-5) we had around 15 active members, most of which were my closest friends in real life.
+                                There was beauty in starting over each time, but eventually we tired of it.
+                            </p>
+                            <p>
+                                Season 7 (2023) would be the last SMP.
+                                Given the lack of motivation to play survival, and having noticed that the additions of the 1.20 update seemed to cater more towards building, we decided to restart the world, keeping the same seed but switching the server's gamemode to creative, which we hadn't done in many years.
+                                Thus, the CMP was born, to great and immediate success. In a couple months we'd created an agglomeration of builds larger than anything we'd ever done: <b>Grug City.</b>
+                            </p>
+                            <p>
+                                The server has closed and re-opened several times since June 2023, primarily during summer/winter breaks, when we're all free and on the same time zone.
+                                During off-seasons, I've continued to play on the world very regularly, since I own the world save.
+                                I've developed quite an attachment to this world; it's become somewhat of a "third place" for me, a place where I log in to relax and unwind, no matter where I may be in real life.
+                                I have no plans on quitting.
+                            </p>
+                            <p>
+                                The following is a gallery of images from various cities and locations around the world.
+                            </p>
+                        </div>
+                    </section>
+                    <section class="minecraftPage">
+                        <div class="fakeScreen">
+                            <div id="mcGallery">
+                                <div id="mc-city-carousel">
+                                    <button id="mc-city-prev">Prev</button>
+                                    <span id="mc-city-name"></span>
+                                    <button id="mc-city-next">Next</button>
+                                </div>
+                                <div id="mc-city-desc"></div>
+                                <div id="mc-img-carousel">
+                                    <img id="mc-img" src="" alt="">
+                                    <div id="mc-img-caption"></div>
+                                    <button id="mc-img-prev">Prev</button>
+                                    <button id="mc-img-next">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="travelPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 19;">>_ my travel log</h4>
+                            <p>Coming soon!</p>
+                        </div>
+                    </section>
+                    <section class="blogPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 12;">>_ my blog</h4>
+                        </div>
+                    </section>
+                    <section class="blogPage">
+                        <div id="blog-book-bg">
+                            <div class="blog-book">
+                                <div class="blog-toc">
+                                    <ul id="blog-toc-list">
+                                        <li><a href="#" data-entry="welcome">back to welcome</a></li>
+                                    </ul>
+                                    <h4>November 2025</h4>
+                                    <h4>October 2025</h4>
+                                    <ul id="blog-toc-list">
+                                        <li><a href="#" data-entry="entry1">Entry 1</a></li>
+                                        <li><a href="#" data-entry="entry2">Entry 2</a></li>
+                                    </ul>
+                                </div>
+                                <div class="blog-entry" id="blog-entry-content">
+                                    <h4 style="text-align: center;">Welcome to my Blog!</h4>
+                                    <p>For someone who doesn't speak much, I do have a lot to say sometimes.</p>
+                                    <p>This section is a space for me to write longer thinkpieces about whatever is on my mind or whatever's been going on in my life lately. Not really a diary, since one entry won't correspond to one day, and it might take me mutiple days or weeks to finish an entry.</p>
+                                    <p>Use the table of contents on the left page to browse through my entries.</p>
+                                    <p>As always, thank you for reading! —Anja ~ ♪</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </section>
+                    <section class="dreamDiaryPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 21;">>_ my dream diary</h4>
+                            <p>Coming soon!</p>
+                        </div>
+                    </section>
+                    <section class="shrinesPage">
+                        <div class="fakeScreen">
+                            <h4 class="typeWriter" style="--characters: 16;">>_ my shrines</h4>
+                            <p>Coming soon!</p>
                         </div>
                     </section>
                     <section class="resourcesPage">
@@ -379,6 +511,11 @@
                                         <li>Used for Ame-Chan's icon in the music player and the Minecraft skin gif.</li>
                                     </ul>
                                 </li>
+                                <li><a class="resourceLink" href="https://status.cafe/" target="_blank">StatusCafe</a>
+                                    <ul>
+                                        <li>Allows easy posting and embedding of status messages! Super recommended.</li>
+                                    </ul>
+                                </li>
                                 <li>Fonts
                                     <ul>
                                         <li><strong>TrixieCyrG-Plain:</strong> Contrary to popular belief, this is the actual font used in the “Serial Experiments Lain” title card, not LoveLetter TW.</li>
@@ -398,12 +535,30 @@
                                         <li><a class="resourceLink" href="https://gligar.neocities.org/" target="_blank">Gligar</a></li>
                                     </ul>
                                 </li>
+                                <li>Backgrounds
+                                    <ul>
+                                        <li><strong>Home:</strong> the end portal texture from Minecraft.</li>
+                                        <li><strong>About:</strong> a screenshot of the Dense Woods from Yume Nikki.</li>
+                                        <li><strong>Minecraft World:</strong> a panorama of my Minecraft world.</li>
+                                        <li><strong>Travel Log:</strong> a picture of downtown Toronto.</li>
+                                        <li><strong>Blog:</strong> scenery from Sailor Moon.</li>
+                                        <li><strong>Dream Diary:</strong> a screenshot of the Snow World from Yume Nikki.</li>
+                                        <li><strong>Shrines:</strong> a screenshot of Neon Genesis Evangelion episode 24.</li>
+                                        <li><strong>Resources:</strong> the background of Green Hill Zone from Sonic the Hedgehog.</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </section>
                     <section class="resourcesPage">
                         <div class="fakeScreen">
                             <h4 class="typeWriter" style="--characters: 21;">>_ special thanks</h4>
+                            <ul>
+                                <li>My friend <strong>Cinnabunny</strong>, for the background picture of downtown Toronto and designing my Minecraft skin.</li>
+                                <li><strong>Professor Elhajj</strong>, for teaching me JQuery (sorry for skipping most of your lectures!).</li>
+                                <li><strong>LuvstarKei</strong>, for her super cool videos about the indie web and Minecraft!</li>
+                                <li><strong>Kikiyama</strong>, for developing Yume Nikki!</li>
+                            </ul>
                         </div>
                     </section>
                 </main>
@@ -464,6 +619,7 @@
                             </div>
                         </div>
                         <div class="window-body">
+                            <p>(W.I.P)</p>
                             <button>EN</button>
                             <button>ES</button>
                             <button>DE</button>
@@ -498,7 +654,8 @@
                             </div>
                         </div>
                         <div class="window-body">
-                            <p id="clockText">Coming soon</p>
+                            <p>It's my Tamanotchi, Dinki! Click to feed him!</p>
+                            <a href="https://tamanotchi.world/26626c" target="_blank"><img src="https://tamanotchi.world/i/26626" alt="It's tamaNOTchi! Click to feed!"></a>
                         </div>
                     </div>
                 </section>
@@ -552,7 +709,7 @@
         
         <footer>
             <h3 id="quote" class="crt" style="color: white; text-align: center;">"What isn't remembered never happened."</h3>
-            <p>v0.1</p>
+            <p>v0.2</p>
             <p>This website is a personal <strong>non-profit</strong> project!</p>
             <p>&copy2025 Mercutio. Not really copyrighted, but it feels cool to say :P</p>
         </footer>
