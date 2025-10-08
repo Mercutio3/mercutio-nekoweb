@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mercutio's Dream</title>
         <link rel="icon" type="image/x-icon" href="favicon.png">
-        <link rel="stylesheet" href="assets/css/main.css">
         <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css">
+        <link rel="stylesheet" href="assets/css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="assets/js/index.js"></script>
     </head>
-    <body onload="generateCalendar('calendarDiv')">
+    <body onload="generateCalendar('calendar-div')">
         <div id="bg-fade-overlay"></div>
         <header>
-            <h1 class="crt" id="maintitle"> - mercutio. - </h1>
+            <h1 class="crt" id="main-title"> - mercutio. - </h1>
         </header>
         <div id="button-carousel-container">
             <div id="button-carousel-track"></div>
@@ -33,45 +33,45 @@
                         <div class="window-body">
                             <p>Click on a door to access it!</p>
                             <nav>
-                                <div class="nexusWrapper">
-                                    <div class="nexusTrack" id="nexusTrack">
+                                <div class="nexus-wrapper">
+                                    <div class="nexus-track" id="nexus-track">
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-home.png" alt="Home">
-                                            <p class="doorLabel">Home</p>
+                                            <img class="door-img" src="assets/images/doors/door-home.webp" alt="Home">
+                                            <p class="door-label">Home</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-about.webp" alt="About Me">
-                                            <p class="doorLabel">About Me</p>
+                                            <img class="door-img" src="assets/images/doors/door-about.webp" alt="About Me">
+                                            <p class="door-label">About Me</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-minecraft.webp" alt="Minecraft World">
-                                            <p class="doorLabel">MC World</p>
+                                            <img class="door-img" src="assets/images/doors/door-minecraft.webp" alt="Minecraft World">
+                                            <p class="door-label">MC World</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-travel.webp" alt="Travel Log">
-                                            <p class="doorLabel">Travel Log</p>
+                                            <img class="door-img" src="assets/images/doors/door-travel.webp" alt="Travel Log">
+                                            <p class="door-label">Travel Log</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-blog.png" alt="Blog">
-                                            <p class="doorLabel">Blog</p>
+                                            <img class="door-img" src="assets/images/doors/door-blog.webp" alt="Blog">
+                                            <p class="door-label">Blog</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-dream.webp" alt="Dream Diary">
-                                            <p class="doorLabel">Dream Diary</p>
+                                            <img class="door-img" src="assets/images/doors/door-dream.webp" alt="Dream Diary">
+                                            <p class="door-label">Dream Diary</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-shrines.webp" alt="Shrines">
-                                            <p class="doorLabel">Shrines</p>
+                                            <img class="door-img" src="assets/images/doors/door-shrines.webp" alt="Shrines">
+                                            <p class="door-label">Shrines</p>
                                         </div>
                                         <div class="door-slide">
-                                            <img class="doorImg" src="assets/images/doors/door-resources.webp" alt="Resources">
-                                            <p class="doorLabel">Resources</p>
+                                            <img class="door-img" src="assets/images/doors/door-resources.webp" alt="Resources">
+                                            <p class="door-label">Resources</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="navButs">
-                                    <button id="navButL" class="navBut">< <</button>
-                                    <button id="navButR" class="navBut">> ></button>
+                                <div class="nav-buts">
+                                    <button id="nav-but-l" class="nav-but">< <</button>
+                                    <button id="nav-but-r" class="nav-but">> ></button>
                                 </div>
                             </nav>
                         </div>
@@ -80,15 +80,18 @@
                 <section id="visitor-count">
                     <div class="window">
                         <div class="title-bar">
-                            <div class="title-bar-text"><sub><img class="titlebaricon" src="assets/images/icons/visitoricon.png" alt=""></sub> Visitor Count</div>
+                            <div class="title-bar-text"><sub><img class="titlebaricon" src="assets/images/icons/visitoricon.png" alt=""></sub> Visitor Counts</div>
                             <div class="title-bar-controls">
                             <button aria-label="Minimize"></button>
                             <button aria-label="Maximize"></button>
                             <button aria-label="Close"></button>
                             </div>
                         </div>
-                        <div class="window-body">
-                            <p>One tortillion</p>
+                        <div id="visitor-count" class="window-body">
+                            <p><u>Total:</u></p>
+                            <script language="javascript" type="text/javascript" src="https://counter1.fc2.com/counter.php?id=40574890&main=1"></script><noscript><img style="max-width: 100%; height: auto; display: block;" src="https://counter1.fc2.com/counter_img.php?id=40574890&main=1" /></noscript>
+                            <p><u>Now:</u></p>
+                            <script language="javascript" type="text/javascript" src="https://counter1.fc2.com/views.php?id=40574890&main=1"></script><noscript><img src="https://counter1.fc2.com/counter_now.php?id=40574890&main=1" /></noscript>
                         </div>
                     </div>
                 </section>
@@ -176,8 +179,18 @@
             
             <div class="column middle">
                 <main>
-                    <section class="homePage">
-                        <div class="fakeScreen">
+                    <section class="home-page">
+                        <div class="fake-screen" style="height: auto;">
+                            
+                            <div style="align-items: center; justify-content: center; display: flex;">
+                                <img class="door-img" src="assets/images/doors/door-home.webp" alt="Home">
+                                <h2 class="crt" style="text-align: center; color: white;">Home</h2>
+                                <img src="assets/images/Madotsuki.gif">
+                            </div>
+                        </div>
+                    </section>
+                    <section class="home-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 30;">>_ welcome to my website!</h4>
                             <p>Hello all, I’m Mercutio! Also known online as Sanster, 
                                 Andromeda, or Madeline. This website is a place where 
@@ -191,60 +204,43 @@
                                 <img src="assets/images/strawberry.gif" style="margin: 0 auto;" alt="Strawberry", width="35" height="35">
                                 <img src="assets/images/strawberry.gif" style="margin: 0 auto;" alt="Strawberry", width="35" height="35">
                             </div>
-                            <p>I know I could still do this on traditional social media, 
-                                but they’ve all felt very same-ey to me lately, and I 
-                                find the lack of customization quite sad. The amount 
-                                of stupid AI features being forced onto me also helped 
-                                me make up my mind and step away from them for good. I 
-                                like the idea of having a page that reflects my personality 
-                                and likes, without having to constantly worry about it 
-                                looking professional or appealing.</p>
+                            <p>Why not do this on existing social media platforms? 
+                                They’ve all felt very same-ey to me lately, and I find the general attitude around them quite sad.
+                                The sheer amount of stupid AI features being forced onto me also helped me make up my mind and begin to step away from them.
+                                I like the idea of having a fully-customizeable page that reflects my personality and likes; a part of my digital footprint that is purposefully more unprofessional.</p>
                             <p>So I decided, might as well make good use of my unemployment 
                                 license (CS Degree) to make this small wish of mine a 
                                 reality. Feel free to look around, and thank you for 
-                                stopping by!</p>
+                                stopping by !</p>
                             <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>
                         </div>
                     </section>
-                    <section class="homePage">
-                        <div class="splitScreen">
-                            <div class="abtCol">
-                                <div class="fakeScreen">
+                    <section class="home-page">
+                        <div class="split-screen">
+                            <div class="abt-col">
+                                <div class="fake-screen">
                                     <h4 class="typeWriter" style="--characters: 17;">>_ new content</h4>
                                 </div>
                             </div>
-                            <div class="abtCol">
-                                <div class="fakeScreen">
+                            <div class="abt-col">
+                                <div class="fake-screen">
                                     <h4 class="typeWriter" style="--characters: 20;">>_ what i'm up to</h4>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section class="homePage">
-                        <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 23;">>_ stamps & buttons</h4>
-                            <br>
-                            <img src="https://gligar.neocities.org/sm.gif">
-                            <img src="https://gligar.neocities.org/pom.png">
-                            <img src="assets/images/stamps/lazer.gif">
-                            <img src="assets/images/stamps/physmed.png">
-                            <img src="assets/images/stamps/nyancat.gif">
-                            <img src="assets/images/stamps/kitty.gif">
-                            <img src="assets/images/stamps/cocaine.png">
-                            <br><br>
-                            <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button11.gif"></a><!-- button by milkyway.moe -->
 
-                        </div>
-                    </section>
-                    <section class="homePage">
-                        <div class="fakeScreen">
+                    <section class="home-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 15;">>_ WEBRINGS!</h4>
                         </div>
                     </section>
-                    <section class="homePage">
-                        <div class="fakeScreen" style="height: 200px; overflow: auto;">
+                    <section class="home-page">
+                        <div class="fake-screen" style="height: 200px; overflow: auto;">
                             <h4 class="typeWriter" style="--characters: 15;">>_ changelog</h4>
-                            <p><strong><u>03/10/2025:</u></strong> Added more Pompompurin images, scaffolded Blog section.</p>
+                            <p><strong><u>06/10/2025:</u></strong> More work on travel log section.</p>
+                            <p><strong><u>04/10/2025:</u></strong> Scaffolded travel log section.</p>
+                            <p><strong><u>03/10/2025:</u></strong> Added more Pompompurin images, stamp carousel, and visitor counters. Rewrote resources section, scaffolded Blog section, </p>
                             <p><strong><u>02/10/2025:</u></strong> Added button carousel.</p>
                             <p><strong><u>30/09/2025:</u></strong> Added backgrounds for each section (with transitions) and Tamanotchi. Also created an animation for a future Nekolink.</p>
                             <p><strong><u>29/09/2025:</u></strong> Back from a very long hiatus! Scaffolded a new Minecraft World section.</p>
@@ -259,12 +255,12 @@
                         </div>
                     </section>
 
-                    <section class="aboutPage">
-                        <div class="fakeScreen">
+                    <section class="about-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 29;">>_ about me !</h4>
                             <p>With lots of scrollables because I love to write about myself :P</p>
-                            <div class="splitScreen">
-                                <div class="abtCol">
+                            <div class="split-screen">
+                                <div class="abt-col">
                                     <p><strong>Quick Facts:</strong></p>
                                     <ul>
                                         <li>Name: Anja</li>
@@ -282,13 +278,13 @@
                                         <li>Passtimes: Guitar, daydreaming, Minecraft, coding, and writing</li>
                                     </ul>
                                 </div>
-                                <div class="abtCol">
-                                    <img id="mcSkin" src="assets/images/mcskin.gif">
+                                <div class="abt-col">
+                                    <img id="mc-skin" src="assets/images/mcskin.gif">
                                     <p style="text-align: center;">This is my Minecraft skin, which kinda looks like what I look like IRL. Just imagine longer hair, earrings, and a nostril piercing.</p>
                                 </div>
                             </div>
-                            <div class="splitScreen">
-                                <div class="abtCol">
+                            <div class="split-screen">
+                                <div class="abt-col">
                                     <p><strong>Likes:</strong></p>
                                         <ul>
                                             <li>Public transport</li>
@@ -298,7 +294,7 @@
                                             <li>Cats, Dogs, & Bunnies</li>
                                         </ul>
                                 </div>
-                                <div class="abtCol">
+                                <div class="abt-col">
                                     <p><strong>Dislikes:</strong></p>
                                     <ul>
                                         <li>Crowds</li>
@@ -309,10 +305,10 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="splitScreen">
-                                <div class="abtCol">
-                                    <div class="funFactContainer">
-                                        <div class="funFactBox">
+                            <div class="split-screen">
+                                <div class="abt-col">
+                                    <div class="fun-fact-container">
+                                        <div class="fun-fact-box">
                                             <p id="fun-fact">
                                                 Click on the Gangnam-Styling Rei Chiquita to see fun facts about me!
                                                 <br>
@@ -321,16 +317,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="abtCol">
+                                <div class="abt-col">
                                     <img id="rei-chiquita" src="assets/images/reichiquita.gif">
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section class="aboutPage">
-                        <div class="splitScreen">
-                            <div class="abtCol">
-                                <div class="fakeScreen">
+                    <section class="about-page">
+                        <div class="split-screen">
+                            <div class="abt-col">
+                                <div class="fake-screen">
                                     <h4 class="typeWriter" style="--characters: 18;">>_ my interests</h4>
                                     <p><b><strong>Videogames:</strong></b> Minecraft, Terraria, OMORI, Celeste, Stardew Valley, Yume Nikki, Undertale, TF2, Half-Life Franchise, FNAF, Super Mario Galaxy</p>
                                     <p><b><strong>Animanga:</strong></b> Evangelion, Serial Experiments Lain, Chainsaw Man, Cowboy Bebop, Madoka Magica, Sailor Moon, Princess Mononoke, Code Geass, Nana, Horimiya, anything by Tatsuki Fujimoto</p>
@@ -339,8 +335,8 @@
                                     <p><b><strong>Books:</strong></b> One Hundred Years of Solitude, The Grapes of Wrath, Hamlet, Don Quixote, 1984, Wuthering Heights</p>
                                 </div>
                             </div>
-                            <div class="abtCol">
-                                <div class="fakeScreen">
+                            <div class="abt-col">
+                                <div class="fake-screen">
                                     <h4 class="typeWriter" style="--characters: 21">>_ quiz results :3</h4>
                                     <a href="https://www.theotaku.com/quizzes/view/3096/which_madoka_magica_girl_are_you%3F"><img border="0" src="http://www.theotaku.com/guru_results/3096_Homura_Akemi.jpg" alt="Which Madoka Magica Girl Are You?" /><br /></a>
                                 </div>
@@ -348,15 +344,15 @@
                         </div>
                         
                     </section>
-                    <section class="aboutPage">
-                        <div class="fakeScreen">
+                    <section class="about-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 9;">>_ Anja</h4>
                             
                         </div>
                     </section>
 
-                    <section class="minecraftPage">
-                        <div class="fakeScreen">
+                    <section class="minecraft-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 29;">>_ my minecraft world :3</h4>
                             <p>
                                 I have been playing Minecraft since 2011. No other game has had such a profound impact in my life.
@@ -384,8 +380,8 @@
                             </p>
                         </div>
                     </section>
-                    <section class="minecraftPage">
-                        <div class="fakeScreen">
+                    <section class="minecraft-page">
+                        <div class="fake-screen">
                             <div id="mcGallery">
                                 <div id="mc-city-carousel">
                                     <button id="mc-city-prev">Prev</button>
@@ -402,29 +398,142 @@
                             </div>
                         </div>
                     </section>
-                    <section class="travelPage">
-                        <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 19;">>_ my travel log</h4>
-                            <p>Coming soon!</p>
+
+                    <section class="travel-page">
+                        <div id="travel-log-window" class="window">
+                            <div id="travel-log-title-bar" class="title-bar">
+                                <div class="title-bar-text"><sub><img class="titlebaricon" src="assets/images/travel-log/log-icon.png" alt=""></sub> Mercutio's Travel Log</div>
+                                <div class="title-bar-controls">
+                                <button aria-label="Minimize"></button>
+                                <button aria-label="Maximize"></button>
+                                <button aria-label="Close"></button>
+                                </div>
+                            </div>
+                            <div id="travel-log-edit-bar" class="window-body">
+                                <div class="travel-log-line"></div>
+                                <p>File</p>
+                                <p>Edit</p>
+                                <p>View</p>
+                                <p>Tools</p>
+                                <p>Help</p>
+                            </div>
+                            <div id="travel-log-explorer-icons" class="window-body">
+                                <div class="travel-log-line2"></div>
+                                <div class="explorer-w-title" data-section="tlHome">
+                                    <img src="assets/images/travel-log/home-page.png" width="48" height="48">
+                                    <p>Home</p>
+                                </div>
+                                <div class="explorer-w-title" data-section="tlCountryList">
+                                    <img src="assets/images/travel-log/country-list.png" width="48" height="48">
+                                    <p>Country List</p>
+                                </div>
+                                <div class="explorer-w-title" data-section="tlCalendar">
+                                    <img src="assets/images/travel-log/calendar-icon.png">
+                                    <p>Calendar</p>
+                                </div>
+                                <div class="explorer-w-title" data-section="tlStats">
+                                    <img src="assets/images/travel-log/stats.png">
+                                    <p>Stats</p>
+                                </div>
+                                <div class="explorer-w-title" data-section="tlMap">
+                                    <img src="assets/images/travel-log/map.png">
+                                    <p>Map</p>
+                                </div>
+                                <div class="explorer-w-title" data-section="tlFuturePlans">
+                                    <img src="assets/images/travel-log/future-plans.png">
+                                    <p>Future Plans</p>
+                                </div>
+                                <div class="travel-log-line4"></div>
+                                <div class="explorer-w-title" data-section="tlSpecialThanks">
+                                    <img src="assets/images/travel-log/special-thanks.png">
+                                    <p>Special Thanks</p>
+                                </div>
+                                <div class="travel-log-line4"></div>
+                                <div class="explorer-w-title" data-section="tlExplorer">
+                                    <img src="assets/images/travel-log/show-directory.png">
+                                    <p>Show Explorer</p>
+                                </div>
+                            </div>
+                            <div id="travel-log-address-bar" class="field-row">
+                                <div class="travel-log-line3"></div>
+                                <label for="travel-log-address">Address</label>
+                            </div>
+                            <div class="window-body">
+                                <div id="travel-log-main-view" style="display: flex; flex-direction: row;">
+                                    <!-- Tree tab sidebar using 98.css tree-view -->
+                                    <div id="travel-log-tree-tab" style="display: none;" class="tree-tab">
+                                        <div class="tree-tab-title">Explorer</div>
+                                        <ul class="tree-view">
+                                            <li>Table of Contents</li>
+                                            <li>Home</li>
+                                            <li>
+                                                <details>
+                                                    <summary>Country List</summary>
+                                                        <ul>
+                                                            <li>Austria</li>
+                                                            <li>Belgium</li>
+                                                            <li>Canada</li>
+                                                            <li>Cuba</li>
+                                                            <li>Czechia</li>
+                                                            <li>Estonia</li>
+                                                            <li>Finland</li>
+                                                            <li>France</li>
+                                                            <li>Germany</li>
+                                                            <li>Latvia</li>
+                                                            <li>Lithuania</li>
+                                                            <li>Luxembourg</li>
+                                                            <li>Mexico</li>
+                                                            <li>Netherlands</li>
+                                                            <li>Slovakia</li>
+                                                            <li>Turkey</li>
+                                                            <li>United States</li>
+                                                        </ul>
+                                                </details>
+                                            </li>
+                                            <li>Calendar</li>
+                                            <li>Map</li>
+                                            <li>Stats</li>
+                                            <li>Future Plans</li>
+                                            <li>Special Thanks</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Main content area -->
+                                    <div id="travel-log-main-content" style="flex: 1; padding: 12px 8px;">
+                                        <!-- Main travel log content goes here -->
+                                         <h2 style="text-align: center;">Special Thanks</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="status-bar">
+                                <p class="status-bar-field">Press F1 for help</p>
+                                <p class="status-bar-field">Slide 1</p>
+                                <p class="status-bar-field">CPU Usage: 14%</p>
+                            </div>
                         </div>
                     </section>
-                    <section class="blogPage">
-                        <div class="fakeScreen">
+
+                    <section class="blog-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 12;">>_ my blog</h4>
                         </div>
                     </section>
-                    <section class="blogPage">
+                    <section class="blog-page">
                         <div id="blog-book-bg">
                             <div class="blog-book">
                                 <div class="blog-toc">
                                     <ul id="blog-toc-list">
                                         <li><a href="#" data-entry="welcome">back to welcome</a></li>
                                     </ul>
-                                    <h4>November 2025</h4>
-                                    <h4>October 2025</h4>
+                                    <h4>2025</h4>
+                                    <h5>November</h5>
+                                    <h5>October</h5>
                                     <ul id="blog-toc-list">
                                         <li><a href="#" data-entry="entry1">Entry 1</a></li>
-                                        <li><a href="#" data-entry="entry2">Entry 2</a></li>
+                                        <li><a href="#" data-entry="entry2">{8.} A Beer For Germany</a></li>
+                                    </ul>
+                                    <h5>September</h5>
+                                    <ul id="blog-toc-list">
+                                        <li><a href="#" data-entry="entry3">{21.} Very Obvious Signs I Was Trans That I Missed with Great Silliness</a></li>
                                     </ul>
                                 </div>
                                 <div class="blog-entry" id="blog-entry-content">
@@ -432,31 +541,138 @@
                                     <p>For someone who doesn't speak much, I do have a lot to say sometimes.</p>
                                     <p>This section is a space for me to write longer thinkpieces about whatever is on my mind or whatever's been going on in my life lately. Not really a diary, since one entry won't correspond to one day, and it might take me mutiple days or weeks to finish an entry.</p>
                                     <p>Use the table of contents on the left page to browse through my entries.</p>
-                                    <p>As always, thank you for reading! —Anja ~ ♪</p>
+                                    <p>As always, thank you for reading! —Anja ♪</p>
                                 </div>
                             </div>
                         </div>
                         
                     </section>
-                    <section class="dreamDiaryPage">
-                        <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 21;">>_ my dream diary</h4>
-                            <p>Coming soon!</p>
+
+                    <section class="dream-diary-page">
+                        <div class="fake-screen">
+                            <h4 class="typeWriter" style="--characters: 21;">>_ coming soon !</h4>
+                            <div style="text-align: center; justify-content: center;">
+                                <img src="assets/images/madot-spin.gif" width="150" height="150" alt="Madot Spinning">
+                            </div>
+                            <p>Adding a Dream Diary to my website really sounds like a good idea to me.
+                                I've been keeping a dream diary in my notes app since March 2023, so there's definitely material to work with!
+                            </p>
+                            <p>Problem is, I haven't quite figured out how I want to present it yet. I don't imagine a huge list of dreams would be very engaging, right?
+                                Plus, because I write the diary entries as soon as I wake up, a lot of entries aren't exactly very logical and I'd have to spend a lot of time making sense of them.
+                                I'd also have to proofread all entries entries to make sure I'm not namedropping people without their consent or describing NSFW scenarios.
+                                Alas! Stay tuned :3
+                            </p>
                         </div>
                     </section>
-                    <section class="shrinesPage">
-                        <div class="fakeScreen">
+
+                    <section class="shrines-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 16;">>_ my shrines</h4>
                             <p>Coming soon!</p>
                         </div>
                     </section>
-                    <section class="resourcesPage">
-                        <div class="fakeScreen">
-                            <h4 class="typeWriter" style="--characters: 14;">>_ resources</h4>
+
+                    <section class="resources-page">
+                        <div class="fake-screen">
+                            <h4 class="typeWriter" style="--characters: 24;">>_ resources + links</h4>
                             <p style="text-align: center; font-size: 16px;"><strong>~ Sharing is caring! ~</strong></p>
                             <p>Because good things are even better when shared. 
                                 Here is a list of resources I used to create this website.</p>
+                        </div>
+                    </section>
+                    <section class="resources-page">
+                        <div class="fake-screen">
+                            <h4 class="typeWriter" style="--characters: 14;">>_ graphics</h4>
+                            <p></p>
                             <ul>
+                                <li>Backgrounds
+                                    <ul>
+                                        <li><strong><a class="resource-link" href="https://minecraft.wiki/images/End_gateway_portal_inside.png?cb859" target="_blank">Home:</a></strong> the end gateway block texture from Minecraft.</li>
+                                        <li><strong><a class="resource-link" href="https://yume.wiki/images/thumb/9/9f/Vending_Machine_DW.png/600px-Vending_Machine_DW.png" target="_blank">About:</a></strong> a screenshot of the Dense Woods from Yume Nikki.</li>
+                                        <li><strong>Minecraft World:</strong> a panorama of my Minecraft world.</li>
+                                        <li><strong>Travel Log:</strong> a picture of downtown Toronto.</li>
+                                        <li><strong>Blog:</strong> scenery from Sailor Moon.</li>
+                                        <li><strong><a class="resource-link" href="https://www.youtube.com/watch?v=gXuFxfNRa70" target="_blank">Dream Diary:</a></strong> a screenshot of the Snow World from Yume Nikki.</li>
+                                        <li><strong>Shrines:</strong> a screenshot of Neon Genesis Evangelion episode 24.</li>
+                                        <li><strong><a class="resource-link" href="https://cdna.artstation.com/p/assets/images/images/038/972/908/large/lapper-bggreenhill1.jpg?1624572253" target="_blank">Resources:</a></strong> the background of Green Hill Zone from Sonic the Hedgehog.</li>
+                                    </ul>
+                                </li>
+                                <li>Buttons
+                                    <ul>
+                                        <li><a class="resource-link" href="https://anlucas.neocities.org/88x31Buttons" target="_blank">Anlucas's Button Collection</a></li>
+                                        <li><a class="resource-link" href="https://cyber.dabamos.de/88x31/index.html" target="_blank">The 88x31 GIF Collection</a></li>
+                                        <li><a class="resource-link" href="https://capstasher.neocities.org/88x31collection" target="_blank">The Largest 88x31 GIF Collection on the Internet</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="resource-link" href="https://drive.google.com/file/d/1wTSDI_ttuJ_eglvGjxTi94S7IKiQ-SX-/view" target="_blank">Cursors</a>
+                                    <ul>
+                                        <li>From the game Needy Streamer Overload.</li>
+                                    </ul>
+                                </li>
+                                <li>Fonts
+                                    <ul>
+                                        <li><strong>TrixieCyrG-Plain:</strong> Contrary to popular belief, this is the actual font used in the “Serial Experiments Lain” title card, not LoveLetter TW.</li>
+                                        <li><strong>LoveLetter TW:</strong> used for central section titles.</li>
+                                        <li><strong>Minecraftia:</strong> used for the Blog.</li>
+                                    </ul>
+                                </li>
+                                <li>Stamps
+                                    <ul>
+                                        <li><a class="resource-link" href="https://gligar.neocities.org/" target="_blank">Gligar's Stamp Collection</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="resource-link" href="https://win98icons.alexmeub.com/" target="_blank">W98 Icons</a>
+                                    <ul>
+                                        <li>PNG collection of all windows 98 icons in different sizes!</li>
+                                        <li>Used for the little icons on the side sections.</li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="resources-page">
+                        <div class="fake-screen">
+                            <h4 class="typeWriter" style="--characters: 23;">>_ coding & features</h4>
+                            <p>There's no point in re-inventing the wheel, especially in programming.
+                                Here are some tools, libraries, and tutorials that greatly helped me in the creation of this website and its features.
+                            </p>
+                            <img src="assets/images/resource_buttons/loveberry.gif" alt="Loveberry">
+                            <a href="https://tamanotchi.world/" target="_blank"><img src="https://tamanotchi.world/includes/img/tamanotchi.gif" alt="Tamanotchi"></a>
+                            <ul>
+                                <li><a class="resource-link" href="https://jdan.github.io/98.css/" target="_blank">98.css</a>
+                                    <ul>
+                                        <li>CSS library to easily recreate windows-98-styled windows!</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resource-link" href="https://aleclownes.com/2017/02/01/crt-display.html" target="_blank">Aleclownes</a>
+                                    <ul>
+                                        <li>Used for the CRT screen door effect in the center sections and the color separation effect in the main header.</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resource-link" href="https://catbox.moe/" target="_blank">Catbox</a>
+                                    <ul>
+                                        <li>Image and file hosting service.</li>
+                                        <li>I used this to store the music player songs, as well as really large files like the home page background GIF.</li>
+                                    </ul>
+                                <li>CSS-Tricks
+                                    <ul>
+                                        <li>"A website about making websites."</li>
+                                        <li>This is where I got the <a class="resourceLink" href="https://css-tricks.com/snippets/css/typewriter-effect/" target="_blank">Typewriter animation</a> and the <a class="resourceLink" href="https://css-tricks.com/old-timey-terminal-styling/" target="_blank"> old-timey terminal window styling</a>.</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resource-link" href="https://ezgif.com/" target="_blank">Ezgif</a>
+                                    <ul>
+                                        <li>Online GIF editor. Lots of useful tools like cropping, flipping, compressing, and converting to/from MP4.</li>
+                                        <li>Used for Ame-Chan's icon in the music player and the Minecraft skin gif.</li>
+                                    </ul>
+                                </li>
+                                <li><a class="resource-link" href="https://counter.fc2.com/en/" target="_blank">FC2 Counter</a>
+                                    <ul>
+                                        <li>Visitor counters compatible with statically-hosted websites.</li>
+                                        <li>I used both the total visitors as well as the concurrent visitors.</li>
+                                    </ul>
+                                </li>
                                 <li>HTML, CSS, JavaScript
                                     <ul>
                                         <li>Pretty self explanatory.</li>
@@ -464,39 +680,18 @@
                                 </li>
                                 <li>JQuery
                                     <ul>
-                                        <li>Streamlines a lot of JavaScript event handling. I find it faster and cleaner than vanilla JS.</li>
+                                        <li>Streamlines JS event handling. For websites like this, I find it cleaner than vanilla JS.</li>
                                     </ul>
                                 </li>
-                                <li>W3Schools
+                                <li><a class="resource-link" href="https://loveberry.nekoweb.org/resources/snippets" target="_blank">LoveBerry</a>
                                     <ul>
-                                        <li>Tons of useful tutorials for learning or refreshing your knowledge of HTML/CSS/JS.</li>
+                                        <li>Template used for the Music Player, which I modified to fit my site's structure.</li>
+                                        <li>This website also has other useful code snippets and is super-cool overall!!</li>
                                     </ul>
                                 </li>
-                                <li><a class="resourceLink" href="https://jdan.github.io/98.css/" target="_blank">98.css</a>
+                                <li><a class="resource-link" href="https://tamanotchi.world/" target="_blank">Tamanotchi</a>
                                     <ul>
-                                        <li>CSS library to easily recreate windows-98-styled windows!</li>
-                                    </ul>
-                                </li>
-                                <li>CSS-Tricks
-                                    <ul>
-                                        <li>"A website about making websites."</li>
-                                        <li>This is where I got the <a class="resourceLink" href="https://css-tricks.com/snippets/css/typewriter-effect/" target="_blank">Typewriter animation</a> and the <a class="resourceLink" href="https://css-tricks.com/old-timey-terminal-styling/" target="_blank"> old-timey terminal window styling</a>.</li>
-                                    </ul>
-                                </li>
-                                <li><a class="resourceLink" href="https://loveberry.nekoweb.org/resources/snippets" target="_blank">LoveBerry</a>
-                                    <ul>
-                                        <li>A modified version of this was used for the Music Player. This website also has other useful code snippets and is super-cool overall!!</li>
-                                    </ul>
-                                </li>
-                                <li><a class="resourceLink" href="https://win98icons.alexmeub.com/" target="_blank">W98 Icons</a>
-                                    <ul>
-                                        <li>PNG collection of all windows 98 icons in different sizes!</li>
-                                        <li>Used for the little icons on the side sections.</li>
-                                    </ul>
-                                </li>
-                                <li><a class="resourceLink" href="https://aleclownes.com/2017/02/01/crt-display.html" target="_blank">Aleclownes</a>
-                                    <ul>
-                                        <li>Used for the CRT screen door effect in the center sections and the color separation effect in the main header.</li>
+                                        <li>Free and easily embeddable Tamagotchi virtual pets.</li>
                                     </ul>
                                 </li>
                                 <li>VSCode + LiveServer
@@ -505,53 +700,32 @@
                                         <li>LiveServer is a VSCode extension that allows you to host a local server and see your changes in real-time. Not essential but saves time.</li>
                                     </ul>
                                 </li>
-                                <li><a class="resourceLink" href="https://ezgif.com/" target="_blank">Ezgif</a>
+                                <li>W3Schools
                                     <ul>
-                                        <li>Online GIF editor. Lots of useful tools like cropping, flipping, compressing, and converting to/from MP4.</li>
-                                        <li>Used for Ame-Chan's icon in the music player and the Minecraft skin gif.</li>
-                                    </ul>
-                                </li>
-                                <li><a class="resourceLink" href="https://status.cafe/" target="_blank">StatusCafe</a>
-                                    <ul>
-                                        <li>Allows easy posting and embedding of status messages! Super recommended.</li>
-                                    </ul>
-                                </li>
-                                <li>Fonts
-                                    <ul>
-                                        <li><strong>TrixieCyrG-Plain:</strong> Contrary to popular belief, this is the actual font used in the “Serial Experiments Lain” title card, not LoveLetter TW.</li>
-                                        <li><strong>LoveLetter TW</strong> is still used for the central section titles, though ;P</li>
-                                    </ul>
-                                </li>
-                                <li>Buttons
-                                    <ul>
-                                        <li>Those little 88x31 gifs you see all over sites like mine, very nostalgic!</li>
-                                        <li><a class="resourceLink" href="https://anlucas.neocities.org/88x31Buttons" target="_blank">Anlucas</a></li>
-                                        <li><a class="resourceLink" href="https://cyber.dabamos.de/88x31/index.html" target="_blank">The 88x31 GIF Collection</a></li>
-                                        <li><a class="resourceLink" href="https://capstasher.neocities.org/88x31collection" target="_blank">The Largest 88x31 GIF Collection on the Internet</a></li>
-                                    </ul>
-                                </li>
-                                <li>Stamps
-                                    <ul>
-                                        <li><a class="resourceLink" href="https://gligar.neocities.org/" target="_blank">Gligar</a></li>
-                                    </ul>
-                                </li>
-                                <li>Backgrounds
-                                    <ul>
-                                        <li><strong>Home:</strong> the end portal texture from Minecraft.</li>
-                                        <li><strong>About:</strong> a screenshot of the Dense Woods from Yume Nikki.</li>
-                                        <li><strong>Minecraft World:</strong> a panorama of my Minecraft world.</li>
-                                        <li><strong>Travel Log:</strong> a picture of downtown Toronto.</li>
-                                        <li><strong>Blog:</strong> scenery from Sailor Moon.</li>
-                                        <li><strong>Dream Diary:</strong> a screenshot of the Snow World from Yume Nikki.</li>
-                                        <li><strong>Shrines:</strong> a screenshot of Neon Genesis Evangelion episode 24.</li>
-                                        <li><strong>Resources:</strong> the background of Green Hill Zone from Sonic the Hedgehog.</li>
+                                        <li>Tons of useful tutorials for learning or refreshing your knowledge of HTML/CSS/JS.</li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                     </section>
-                    <section class="resourcesPage">
-                        <div class="fakeScreen">
+                    <section class="resources-page">
+                        <div class="fake-screen">
+                            <h4 class="typeWriter" style="--characters: 17;">>_ inspiration</h4>
+                            <p>Before beginning work on this website, I had never really taken the time to browse the Indie Web.
+                                Since then, I have visited so many cool websites that have definitely influenced the content and aesthetics of my own.
+                                You should definitely check them out!</p>
+                            <a href="https://reigen.moe/home" target="_blank"><img src="assets/images/resource_buttons/reigenmoe-badge.gif" alt="ReigenMoe"></a>
+                            <a href="https://chocolatehexer.nekoweb.org/" target="_blank"><img src="https://chocolatehexer.nekoweb.org/pics/mybutton.gif" alt="button"></a>
+                            <a href="https://cloverbell.neocities.org/" target="_blank"><img src="https://cloverbell.neocities.org/n_n/cloverbell.gif"></a>
+                            <a href="https://electric-tenshi.nekoweb.org/top" target="_blank"><img src="assets/images/resource_buttons/electric-tenshi.gif" alt="Electric Tenshi"></a>
+                            <a href="https://layercake.moe/home" target="_blank"><img src="assets/images/resource_buttons/layercake.gif" alt="LayerCake"></a>
+                            <a href="https://maddoxxing.neocities.org/" target="_blank"><img src="assets/images/resource_buttons/maddoxxing.png" alt="Maddoxxing"></a>
+                            <a href="https://onthequiet.nekoweb.org" target="_blank"><img src="https://onthequiet.nekoweb.org/gattonero.gif"></a>
+                            <a href="https://sadgrlonline.github.io/archived-sadgrl.online/" target="_blank"><img src="assets/images/resource_buttons/sadgrlonline.gif"></a>
+                        </div>
+                    </section>
+                    <section class="resources-page">
+                        <div class="fake-screen">
                             <h4 class="typeWriter" style="--characters: 21;">>_ special thanks</h4>
                             <ul>
                                 <li>My friend <strong>Cinnabunny</strong>, for the background picture of downtown Toronto and designing my Minecraft skin.</li>
@@ -637,9 +811,9 @@
                             </div>
                         </div>
                         <div class="window-body">
-                            <p id="clockText">Testing right section :3</p>
+                            <!--<p id="clockText">Testing right section :3</p>-->
                             <iframe src="https://free.timeanddate.com/clock/i9x1w5ps/n308/tlde/fn8/tct/pct/ta1" frameborder="0" width="111" height="19" allowtransparency="true"></iframe>
-                            <div id="calendarDiv"></div>
+                            <div id="calendar-div"></div>
                         </div>
                     </div>
                 </section>
@@ -706,12 +880,15 @@
                 </section>
             </aside>
         </div>
+        <div id="stamp-carousel-container">
+            <div id="stamp-carousel-track"></div>
+        </div>
         
         <footer>
             <h3 id="quote" class="crt" style="color: white; text-align: center;">"What isn't remembered never happened."</h3>
-            <p>v0.2</p>
+            <p>v0.3</p>
             <p>This website is a personal <strong>non-profit</strong> project!</p>
-            <p>&copy2025 Mercutio. Not really copyrighted, but it feels cool to say :P</p>
+            <p>&copy2025 Mercutio. Made with love :3</p>
         </footer>
     </body>
 </html>

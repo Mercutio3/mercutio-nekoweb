@@ -41,13 +41,16 @@ a {
     cursor: url('../images/cursors/nso_point.png'), auto;
 }
 
-.navBut {
+.nav-but {
     cursor: url('../images/cursors/nso_point.png'), auto;
     min-width: 50px;
     display: block;
     font-size: 14px;
 }
 
+p {
+  font-size: 12px;
+}
 
 section {
   margin: 15px auto;
@@ -60,16 +63,21 @@ h1, h3 {
     font-family: lainFont;
 }
 
+h2 {
+  font-family: lainFont;
+  font-size: 3.5rem;
+}
+
 h4 {
     font-family: lainFont2;
 }
 
-#maintitle {
+#main-title {
     color: white;
     text-align: center;
 }
 
-.fakeScreen {
+.fake-screen {
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     color: white;
@@ -87,7 +95,7 @@ h4 {
     filter: brightness(1.2);
 }
 
-.fakeScreen::before {
+.fake-screen::before {
   content: " ";
   display: block;
   position: absolute;
@@ -111,7 +119,7 @@ h4 {
     display: flex;
     width: calc(225px + 775px + 225px);
     gap: 1rem;
-    margin: 2rem auto;
+    margin: 0 auto 2rem auto;
     justify-content: center;
 }
 
@@ -134,7 +142,16 @@ footer {
     color: white;
 }
 
-.resourceLink {
+#visitor-count .window-body {
+  text-align: center;
+}
+#visitor-count .window-body img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.resource-link {
   color: white;
 }
 
@@ -495,25 +512,25 @@ input[type=range]::-moz-range-track {
     width:14px;
 }
 
-.doorLabel {
+.door-label {
   font-size: 14px;
   font-weight: bold;
 }
 
-.navButs {
+.nav-buts {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.nexusWrapper {
+.nexus-wrapper {
   width: 88px;
   overflow: hidden;
   margin: auto;
 }
 
-.nexusTrack {
+.nexus-track {
   display: flex;
   gap: 1rem;
   transition: transform 0.4s ease-in-out;
@@ -525,24 +542,25 @@ input[type=range]::-moz-range-track {
   text-align: center;
 }
 
-.doorImg {
+.door-img {
   border: 2px solid black;
+  height: 80px;
 }
 
-.splitScreen {
+.split-screen {
     display: flex;
     gap: 1rem;
     margin: 1rem auto;
     justify-content: center;
 }
 
-.abtCol {
+.abt-col {
     box-sizing: border-box;
     height: auto;
     width: 345px;
 }
 
-#mcSkin {
+#mc-skin {
   border: 1px dotted white;
   border-radius: 5px;
   width: 150px;
@@ -550,7 +568,7 @@ input[type=range]::-moz-range-track {
   display: block;
 }
 
-#calendarDiv {
+#calendar-div {
   margin-top: 8px;
   padding: 8px;
   background-color: #FFF;
@@ -586,13 +604,13 @@ input[type=range]::-moz-range-track {
   border-radius: 3px;
 }
 
-.funFactContainer {
+.fun-fact-container {
   display: flex;
   align-items: center;
   height: 270px;
 }
 
-.funFactBox {
+.fun-fact-box {
   width: 300px;
   border: 2px solid gray;
   margin: auto;
@@ -615,7 +633,7 @@ input[type=range]::-moz-range-track {
   display: block;
 }
 
-.minecraftPage .fakeScreen {
+.minecraft-page .fakeScreen {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -685,10 +703,6 @@ input[type=range]::-moz-range-track {
   margin-bottom: 0;
 }
 
-.layout-container {
-  margin-top: 0;
-}
-
 #blog-book-bg {
   background: url("../images/bookandquill.png");
   background-repeat: no-repeat;
@@ -726,7 +740,13 @@ input[type=range]::-moz-range-track {
 
 .blog-toc h4 {
   margin-top: 0;
+  margin-bottom: 0;
   font-family: minecraftFont;
+}
+
+.blog-toc h5 {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .blog-toc ul {
@@ -757,5 +777,227 @@ input[type=range]::-moz-range-track {
 
 .blog-entry h4 {
   font-family: minecraftFont;
+  margin-top: 0;
+}
+
+#stamp-carousel-container {
+  width: calc(225px + 775px + 225px);
+  overflow: hidden;
+  background: transparent;
+  height: 56px;
+  display: flex;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 1rem auto;
+  position: relative;
+}
+
+#stamp-carousel-track {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  height: 56px;
+}
+
+#stamp-carousel-track img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+.column.middle {
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+#travel-log-window {
+  height: auto;
+  overflow-y: auto;
+  transition: 0.3s all;
+}
+
+#travel-log-title-bar {
+  background: linear-gradient(90deg, #636B2F, #FCDA8B);
+}
+
+#travel-log-edit-bar {
+  display: flex;
+  height: 30px;
+  margin: 0;
+  align-items: center;
+  padding-left: 5px;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px grey;
+}
+
+#travel-log-edit-bar p {
+  padding: 5px;
+}
+
+.travel-log-line {
+  width: 4px;
+  height: 70%;
+  box-shadow: inset -1px -1px #565656, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  margin-right: 3px;
+}
+
+.travel-log-line2 {
+  width: 4px;
+  height: 82px;
+  box-shadow: inset -1px -1px #565656, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  margin-right: 3px;
+}
+
+.travel-log-line3 {
+  width: 4px;
+  height: 23px;
+  box-shadow: inset -1px -1px #565656, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+  margin-right: 3px;
+}
+
+.travel-log-line4 {
+  width: 0px;
+  height: 82px;
+  border-left: 1px inset gray;
+  border-right: 1px inset #dfdfdf;
+  border-top: 1px inset #dfdfdf;
+  border-bottom: 1px inset gray;
+  margin-right: 3px;
+}
+
+.explorer-w-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  padding: 5px 10px 5px 10px;
+}
+
+.explorer-w-title p {
+  margin-bottom: 0;
+}
+
+#travel-log-explorer-icons {
+  display: flex;
+  padding: 5px;
+  margin: 0;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px grey;
+}
+
+#travel-log-address-bar {
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: inset 1px 1px #fff, inset -1px -1px grey;
+  border-bottom: 1px inset white;
+}
+
+#travel-log-main-view {
+  display: block;
+  background: #fff;
+  box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding: 0;
+  min-height: 300px;
+  height: 100%;
+}
+
+#travel-log-main-content {
+  font-size: 1rem;
+}
+
+  #travel-log-tree-tab {
+    background: #f3f3f3;
+    border-right: 2px solid #c0c0c0;
+    padding: 12px 8px;
+    min-width: 180px;
+    max-width: 260px;
+    display: none;
+    flex-shrink: 0;
+    height: 100%;
+  }
+
+  .tree-tab-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  #travel-log-tree-tab .tree-view {
+    font-family: 'Pixelated MS Sans Serif', 'MS Sans Serif', Arial, sans-serif;
+    font-size: 15px;
+    margin-left: 0;
+  }
+  
+
+  #travel-log-main-content {
+    flex: 1;
+    padding: 12px 8px;
+  }
+
+
+#travel-log-bottom-info {
+  display: flex;
+  align-items: center;
+  height: 23px;
+  margin-left: 7px;
+}
+
+#yume-walk {
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  display: block;
+}
+
+.country-list-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  justify-items: center;
+  margin-top: 2rem 0;
+}
+
+.country-list-grid.explorer-open {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.country-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.country-flag {
+  width: auto;
+  height: 48px;
+  display: block;
+  object-fit: contain;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.country-item p {
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.future-plan-row {
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.future-plan-flag {
+  float: left;
+  height: 40px;
+  width: auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-right: 18px;
+  margin-bottom: 6px;
+}
+
+.future-plan-text p {
   margin-top: 0;
 }
