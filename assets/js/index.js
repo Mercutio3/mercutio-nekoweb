@@ -1,3 +1,6 @@
+import { trackList } from './data/music-data.js';
+import { mcGalleryGroups } from './data/minecraft-data.js';
+
 $(document).ready(function(){
     let explorerIsOpen = false;
 
@@ -187,11 +190,12 @@ $(document).ready(function(){
         });
     // Toggle travel log tree tab sidebar using a named function
     function toggleTravelLogTreeTab() {
-        var $treeTab = $('#travel-log-tree-tab');
+        let $treeTab = $('#travel-log-tree-tab');
         $treeTab.toggle();
         explorerIsOpen = $treeTab.is(":visible");
     }
 
+    let isBgTransitioning = false;
     setSectionBackground("home");
 
     $(".fake-screen").mouseenter(function(){
@@ -208,6 +212,8 @@ $(document).ready(function(){
     $(".minecraft-page").hide();
     $(".travel-page").hide();
     $(".blog-page").hide();
+    $(".cookbook-page").hide();
+    $(".guestbook-page").hide();
     $(".dream-diary-page").hide();
     $(".shrines-page").hide();
     $(".resources-page").hide();
@@ -236,6 +242,7 @@ $(document).ready(function(){
     // create new audio element
     let curr_track = document.getElementById("music");
 
+    /*
     let track_list = [
         {
             name:"All Night Radio - Ado",
@@ -258,6 +265,7 @@ $(document).ready(function(){
             path:"https://files.catbox.moe/nhhaic.mp3"
         }
     ];
+    */
 
     // reset values
     function resetValues() {
@@ -271,11 +279,11 @@ $(document).ready(function(){
         resetValues();
 
         // load a new track
-        curr_track.src = track_list[track_index].path;
+        curr_track.src = trackList[track_index].path;
         curr_track.load();
 
         // update details of the track
-        track_name.textContent = "Track " + (track_index + 1) + "/" + track_list.length + ": " + track_list[track_index].name;
+        track_name.textContent = "Track " + (track_index + 1) + "/" + trackList.length + ": " + trackList[track_index].name;
 
         // set an interval of 1000 milliseconds for updating the seek slider
         updateTimer = setInterval(seekUpdate, 1000);
@@ -284,7 +292,7 @@ $(document).ready(function(){
         curr_track.onended = nextTrack;
     }
 
-    $(".playpause-track").click(function(){
+    $(".playpause-track").off('click').on('click', function(){
         if(isPlaying){
             pauseTrack();
         } else {
@@ -321,18 +329,14 @@ $(document).ready(function(){
 
     // moves to the next track
     function nextTrack() {
-        if (track_index < track_list.length - 1)
-            track_index += 1;
-        else track_index = 0;
+        track_index = (track_index + 1) % trackList.length;
         loadTrack(track_index);
         playTrack();
     }
 
     // moves to the previous track
     function prevTrack() {
-        if (track_index > 0)
-            track_index -= 1;
-        else track_index = track_list.length - 1;
+        track_index = (track_index - 1 + trackList.length) % trackList.length;
         loadTrack(track_index);
         playTrack();
     }
@@ -344,12 +348,10 @@ $(document).ready(function(){
     }
 
     function seekUpdate() {
-        let seekPosition = 0;
+        if(!curr_track || isNaN(curr_track.duration)) return;
 
-        // check if the current track duration is a legible number
-        if (!isNaN(curr_track.duration)) {
-            seekPosition = curr_track.currentTime * (100 / curr_track.duration);
-            seek_slider.value = seekPosition;
+        let seekPosition = curr_track.currentTime * (100 / curr_track.duration);
+        seek_slider.value = seekPosition;
 
         // calculate the time left and the total duration
         let currentMinutes = Math.floor(curr_track.currentTime / 60);
@@ -365,154 +367,76 @@ $(document).ready(function(){
 
         curr_time.textContent = currentMinutes + ":" + currentSeconds;
         total_duration.textContent = durationMinutes + ":" + durationSeconds;
-        }
     }
 
     // load the first track in the tracklist
     loadTrack(track_index);
 
-    const track = document.getElementById("nexus-track");
-    const slides = document.querySelectorAll(".door-slide");
-    const doorWidth = 88;
-    const gap = 16;
-    const totalWidth = doorWidth + gap;
+    let isNavTransitioning = false;
 
-    let currentIndex = 1;
+    function updateSectionTitleBar(section) {
+        const sectionTitles = {
+            home: { text: "Home", img: "assets/images/titles/door-home.webp", img2: "assets/images/titles/madot-triangle.webp" },
+            about: { text: "About Me", img: "assets/images/titles/door-about.webp", img2: "assets/images/titles/madot-umbrella.webp" },
+            minecraft: { text: "Minecraft World", img: "assets/images/titles/door-minecraft.webp", img2: "assets/images/titles/madot-flute.webp" },
+            travel: { text: "Travel Log", img: "assets/images/titles/door-travel.webp", img2: "assets/images/titles/madot-bicycle.png" },
+            blog: { text: "Blog", img: "assets/images/titles/door-blog.webp", img2: "assets/images/titles/madot-yuki.webp" },
+            cookbook: { text: "Cookbook", img: "assets/images/titles/door-cookbook.webp", img2: "assets/images/titles/madot-witch.webp" },
+            guestbook: { text: "Guestbook", img: "assets/images/titles/door-guestbook.png", img2: "assets/images/titles/madot-hand.webp" },
+            dream: { text: "Dream Diary", img: "assets/images/titles/door-dream.webp" , img2: "assets/images/titles/madot-hat.webp" },
+            shrines: { text: "Shrines", img: "assets/images/titles/door-shrines.webp", img2: "assets/images/titles/madot-knife.webp" },
+            resources: { text: "Resources", img: "assets/images/titles/door-resources.webp", img2: "assets/images/titles/madot-noface.webp" },
+        };
+        const $bar = $("#section-title-bar");
 
-    // Clone first and last slides
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
+        updateSectionTitleBar.currentSection = section;
 
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, track.firstChild);
-
-    function updateSlide(animate = true) {
-        if (!animate) track.style.transition = "none";
-        else track.style.transition = "transform 0.4s ease-in-out";
-        track.style.transform = `translateX(-${currentIndex * totalWidth}px)`;
+        $bar.css("opacity", "0");
+        setTimeout(function() {
+            if(updateSectionTitleBar.currentSection === section){
+                $("#section-title-text").text(sectionTitles[section].text);
+                $("#section-door-img").attr("src", sectionTitles[section].img);
+                $("#section-madotsuki-img").attr("src", sectionTitles[section].img2 || "");
+                $bar.css("opacity", "1");
+            }
+        }, 250);
     }
 
-    $("#nav-but-l").click(function(){
-        currentIndex--;
-        updateSlide();
-        setTimeout(checkWrap, 400);
-    });
+    $(".main-navbar a").click(function(e){
+        e.preventDefault();
+        if(isNavTransitioning) return;
+        isNavTransitioning = true;
+        const section = $(this).data("section");
+        setSectionBackground(section);
 
-    $("#nav-but-r").click(function(){
-        currentIndex++;
-        updateSlide();
-        setTimeout(checkWrap, 400);
-    });
+        // Update title bar
+        updateSectionTitleBar(section);
 
-    function checkWrap() {
-        if (currentIndex === 0) {
-            currentIndex = slides.length; // real last slide
-            updateSlide(false);
-        } else if (currentIndex === slides.length + 1) {
-            currentIndex = 1; // real first slide
-            updateSlide(false);
+        $(".home-page, .about-page, .minecraft-page, .travel-page, .blog-page, .guestbook-page, .cookbook-page, .dream-diary-page, .shrines-page, .resources-page").slideUp();
+        switch(section){
+            case "home": $(".home-page").slideDown(); break;
+            case "about":
+                $(".about-page").slideDown(function() {
+                    syncInterestsQuizzesHeight();
+                });
+                break;
+            case "minecraft": $(".minecraft-page").slideDown(); break;
+            case "travel": $(".travel-page").slideDown(); break;
+            case "blog": $(".blog-page").slideDown(); break;
+            case "cookbook": $(".cookbook-page").slideDown(); break;
+            case "guestbook": $(".guestbook-page").slideDown(); break;
+            case "dream": $(".dream-diary-page").slideDown(); break;
+            case "shrines": $(".shrines-page").slideDown(); break;
+            case "resources": $(".resources-page").slideDown(); break;
         }
-    }
 
-    $(".door-img").click(function(){
-        const index = (currentIndex - 1 + slides.length) % slides.length;
-        switch(index){
-            case 0:
-                setSectionBackground("home");
-                $(".home-page").slideDown();
-                $(".about-page").slideUp();
-                $(".minecraft-page").slideUp();
-                $(".travel-page").slideUp();
-                $(".blog-page").slideUp();
-                $(".dream-diary-page").slideUp();
-                $(".shrines-page").slideUp();
-                $(".resources-page").slideUp();
-                break;
-            case 1:
-                setSectionBackground("about");
-                $(".about-page").slideDown();
-                $(".home-page").slideUp();
-                $(".minecraft-page").slideUp();
-                $(".travel-page").slideUp();
-                $(".blog-page").slideUp();
-                $(".dream-diary-page").slideUp();
-                $(".shrines-page").slideUp();
-                $(".resources-page").slideUp();
-                break;
-            case 2:
-                setSectionBackground("minecraft");
-                $(".minecraft-page").slideDown();
-                $(".home-page").slideUp();
-                $(".about-page").slideUp();
-                $(".travel-page").slideUp();
-                $(".blog-page").slideUp();
-                $(".dream-diary-page").slideUp();
-                $(".shrines-page").slideUp();
-                $(".resources-page").slideUp();
-                break;
-            case 3:
-                setSectionBackground("travel");
-                $(".travel-page").slideDown();
-                $(".home-page").slideUp();
-                $(".about-page").slideUp();
-                $(".minecraft-page").slideUp();
-                $(".blog-page").slideUp();
-                $(".dream-diary-page").slideUp();
-                $(".shrines-page").slideUp();
-                $(".resources-page").slideUp();
-                break;
-            case 4:
-                setSectionBackground("blog");
-                $(".blog-page").slideDown();
-                $(".home-page").slideUp();
-                $(".about-page").slideUp();
-                $(".minecraft-page").slideUp();
-                $(".travel-page").slideUp();
-                $(".dream-diary-page").slideUp();
-                $(".shrines-page").slideUp();
-                $(".resources-page").slideUp();
-                break;
-            case 5:
-                setSectionBackground("dream");
-                $(".dream-diary-page").slideDown();
-                $(".home-page").slideUp();
-                $(".about-page").slideUp();
-                $(".minecraft-page").slideUp();
-                $(".travel-page").slideUp();
-                $(".blog-page").slideUp();
-                $(".shrines-page").slideUp();
-                $(".resources-page").slideUp();
-                break;
-
-            case 6:
-                setSectionBackground("shrines");
-                $(".shrines-page").slideDown();
-                $(".home-page").slideUp();
-                $(".about-page").slideUp();
-                $(".minecraft-page").slideUp();
-                $(".travel-page").slideUp();
-                $(".blog-page").slideUp();
-                $(".dream-diary-page").slideUp();
-                $(".resources-page").slideUp();
-                break;
-            case 7:
-                setSectionBackground("resources");
-                $(".resources-page").slideDown();
-                $(".home-page").slideUp();
-                $(".about-page").slideUp();
-                $(".minecraft-page").slideUp();
-                $(".travel-page").slideUp();
-                $(".blog-page").slideUp();
-                $(".shrines-page").slideUp();
-                $(".dream-diary-page").slideUp();
-                break;
-        }
+        setTimeout(function() {
+            isNavTransitioning = false;
+        }, 2000);
     });
-
-    updateSlide(false);
 
     $("#rei-chiquita").click(function(){
-        var factList = [
+        let factList = [
             "i have a dog ! his name is Iron and he is a pitbull.",
             "i am right-handed ! when i was little i really wanted to be ambidexterous, but i never committed to it.",
             "i know the lyrics to most beatles songs between 1965-1970 by heart !",
@@ -542,90 +466,6 @@ $(document).ready(function(){
         const randomInt2 = Math.floor(Math.random() * factList.length);
         $("#fun-fact").text(factList[randomInt2]);
     });
-
-    const mcGalleryGroups = [
-        {
-            name: "Grug City",
-            description: "Encompassing an area of over a million square meters, Grug City is the largest city and capital of the Minecraft world.",
-            images: [
-                { src: "assets/images/minecraft/grugcity1.png", alt: "Grug City 1" },
-                { src: "assets/images/minecraft/grugcity2.png", alt: "Grug City 2" },
-                { src: "assets/images/minecraft/grugcity3.png", alt: "Grug City 3" },
-            ]
-        },
-        {
-            name: "Sky City",
-            description: "serp iguano",
-            images: [
-                { src: "assets/images/minecraft/skycity1.png", alt: "Sky City 1" },
-                { src: "assets/images/minecraft/skycity2.png", alt: "Sky City 2" },
-                { src: "assets/images/minecraft/skycity3.png", alt: "Sky City 3" },
-            ]
-        },
-        {
-            name: "Snowtown",
-            description: "A cozy medieval city located in the southernmost part of of a large snow biome.",
-            images: [
-                { src: "assets/images/minecraft/snowtown1.png", alt: "Snowtown 1" },
-                { src: "assets/images/minecraft/snowtown2.png", alt: "Snowtown 2" },
-                { src: "assets/images/minecraft/snowtown3.png", alt: "Snowtown 3" },
-            ]
-        },
-        {
-            name: "Savannhattan",
-            description: "The world's financial district; a grid city of impressive skyscrapers built on top of a savanna biome.",
-            images: [
-                { src: "assets/images/minecraft/savannhattan1.png", alt: "Savannhattan 1" },
-                { src: "assets/images/minecraft/savannhattan2.png", alt: "Savannhattan 2" },
-                { src: "assets/images/minecraft/savannhattan3.png", alt: "Savannhattan 3" },
-            ]
-        },
-        {
-            name: "Nieuwe Brugge",
-            description: "A large island city known for its canals. Outside of the main square, the city is constructed exclusively out of blocks available in Minecraft Beta 1.7.3.",
-            images: [
-                { src: "assets/images/minecraft/nieuwebrugge1.png", alt: "Nieuwe Brugge 1" },
-                { src: "assets/images/minecraft/nieuwebrugge2.png", alt: "Nieuwe Brugge 2" },
-                { src: "assets/images/minecraft/nieuwebrugge3.png", alt: "Nieuwe Brugge 3" },
-            ]
-        },
-        {
-            name: "Cienfuegos",
-            description: "A tropical coastal port city straddling both sides of a large bay.",
-            images: [
-                { src: "assets/images/minecraft/cienfuegos1.png", alt: "Cienfuegos 1" },
-                { src: "assets/images/minecraft/cienfuegos2.png", alt: "Cienfuegos 2" },
-                { src: "assets/images/minecraft/cienfuegos3.png", alt: "Cienfuegos 3" },
-            ]
-        },
-        {
-            name: "Schönebeck",
-            description: "",
-            images: [
-                { src: "assets/images/minecraft/schonebeck1.png", alt: "Schönebeck 1" },
-                { src: "assets/images/minecraft/schonebeck2.png", alt: "Schönebeck 2" },
-                { src: "assets/images/minecraft/schonebeck3.png", alt: "Schönebeck 3" },
-            ]
-        },
-        {
-            name: "Himawari",
-            description: "",
-            images: [
-                { src: "assets/images/minecraft/himawari1.png", alt: "Himawari 1" },
-                { src: "assets/images/minecraft/himawari2.png", alt: "Himawari 2" },
-                { src: "assets/images/minecraft/himawari3.png", alt: "Himawari 3" },
-            ]
-        },
-        {
-            name: "Winterfell",
-            description: "A very large castle. Its fortifications are notoriously difficult to invade, especially during the winter months.",
-            images: [
-                { src: "assets/images/minecraft/winterfell1.png", alt: "Winterfell 1" },
-                { src: "assets/images/minecraft/winterfell2.png", alt: "Winterfell 2" },
-                { src: "assets/images/minecraft/winterfell3.png", alt: "Winterfell 3" },
-            ]
-        }
-    ];
 
     let currentMCGroup = 0;
     let currentMCImage = 0;
@@ -668,9 +508,11 @@ $(document).ready(function(){
     renderMCImgGroup();
 
     function setSectionBackground(section) {
-        var body = $("body");
-        var overlay = $("#bg-fade-overlay");
-        var newBg = "";
+        if(isBgTransitioning) return;
+        isBgTransitioning = true;
+        let body = $("body");
+        let overlay = $("#bg-fade-overlay");
+        let newBg = "";
 
         switch(section) {
             case "home":
@@ -687,6 +529,12 @@ $(document).ready(function(){
                 break;
             case "blog":
                 newBg = "url('assets/images/backgrounds/blog-bg.jpg')";
+                break;
+            case "cookbook":
+                newBg = "url('assets/images/backgrounds/cookbook-bg.jpg')";
+                break;
+            case "guestbook":
+                newBg = "url('assets/images/backgrounds/guestbook-bg.png')";
                 break;
             case "dream":
                 newBg = "url('assets/images/backgrounds/dream-bg.jpg')";
@@ -705,40 +553,46 @@ $(document).ready(function(){
         setTimeout(function() {
             body.css("background-image", newBg);
             overlay.css("opacity", 0);
+            isBgTransitioning = false;
         }, 2000);
     }
 
     const buttonImages = [
-        "3i.png",
+        "3i.webp",
         "antinft.gif",
-        "aperture.jpg",
+        "aperture.webp",
         "buttcertificate.gif",
         "chocoloaf.gif",
         "chrome-suck.gif",
         "cinna.gif",
+        "cinnakawaii.gif",
         "college.gif",
-        "companion.jpg",
-        "copland.png",
+        "companion.webp",
+        "copland.webp",
         "cssdif.gif",
         "ditchsocial.gif",
         "dream-chobits.gif",
         "dream-diary.gif",
         "drpepper.gif",
-        "ds.jpg",
+        "ds.webp",
         "evangelion.gif",
         "eyes.gif",
-        "flipnote.png",
+        "fascist.webp",
+        "flipnote.webp",
         "geocitieswww.gif",
+        "google-stand.gif",
         "gordon.gif",
         "got_html.gif",
-        "hatemac.jpg",
+        "hatemac.webp",
         "hellontheweb.gif",
-        "homebrew.png",
+        "homebrew.webp",
         "insanity.gif",
         "lain.gif",
         "lain2.gif",
         "lurk-n-leech.gif",
+        "kawaiiuniverse.gif",
         "mews.gif",
+        "miku-approve.gif",
         "minecraft.gif",
         "n64.gif",
         "nclinux.gif",
@@ -758,15 +612,15 @@ $(document).ready(function(){
         "slava.gif",
         "sm_fever_button.gif",
         "stardew_valley.gif",
-        "stockinganarchy.png",
-        "temptationstairway.png",
+        "stockinganarchy.webp",
+        "temptationstairway.webp",
         "train.gif",
-        "trans.png",
+        "trans.webp",
         "vocaloid.gif",
         "wii.gif",
         "wikipedia_ru.gif",
         "wikipedia.gif",
-        "windose.png",
+        "windose.webp",
         "yumenikki2.gif",
         "yumenikki3.gif"
     ]
@@ -774,21 +628,21 @@ $(document).ready(function(){
     shuffle(buttonImages);
     const $track = $("#button-carousel-track");
     buttonImages.forEach(img => {
-        const $img = $(`<img src="assets/images/buttons/${img}" alt="${img}"/>`);
+        const $img = $(`<img src="assets/images/buttons/${img}" width="88" height="31" alt="${img}"/>`);
         $track.append($img);
     });
 
     buttonImages.forEach(img => {
-        const $img = $(`<img src="assets/images/buttons/${img}" alt="${img}"/>`);
+        const $img = $(`<img src="assets/images/buttons/${img}" width="88" height="31" alt="${img}"/>`);
         $track.append($img);
     });
 
     let scrollPos = 0;
     function autoScrollCarousel() {
-      scrollPos += 1;
-      if (scrollPos >= $track[0].scrollWidth / 2) scrollPos = 0;
-      $track.css("transform", `translateX(-${scrollPos}px)`);
-      requestAnimationFrame(autoScrollCarousel);
+        scrollPos += 1;
+        if (scrollPos >= $track[0].scrollWidth / 2) scrollPos = 0;
+        $track.css("transform", `translate3d(-${scrollPos}px, 0, 0)`);
+        requestAnimationFrame(autoScrollCarousel);
     }
     autoScrollCarousel();
 
@@ -838,55 +692,67 @@ $(document).ready(function(){
     })
 
     const stampImages = [
-        "aperture.png",
-        "backrooms.png",
-        "bliss.png",
-        "broccoli.png",
-        "cocaine.png",
-        "delicat.png",
-        "eyes.png",
-        "face.jpg",
-        "gmod.png",
-        "hate.png",
+        "aperture.webp",
+        "backrooms.webp",
+        "badapple.gif",
+        "blacklagoon.webp",
+        "bliss.webp",
+        "broccoli.webp",
+        "cocaine.webp",
+        "delicat.webp",
+        "eyes.webp",
+        "face.webp",
+        "gmod.webp",
+        "hate.webp",
+        "house.webp",
         "kitty.gif",
         "lain-dance.gif",
         "lainangy.gif",
-        "lainstamp.png",
+        "lainstamp.webp",
         "lazer.gif",
         "leek.gif",
-        "love.png",
-        "moon-stamp.png",
+        "love.webp",
+        "madoka.webp",
+        "matrix.webp",
+        "miku.gif",
+        "minecraft.gif",
+        "moon-stamp.webp",
         "nyancat.gif",
+        "off.webp",
         "palestine.gif",
         "pacman.webp",
-        "physmed.png",
+        "physmed.webp",
         "purin.webp",
         "purin2.gif",
         "purin3.gif",
-        "rei.png",
+        "rei.webp",
         "reiblush.gif",
+        "sleepy.webp",
         "stars.gif",
+        "stocking.gif",
+        "talkingheads.webp",
         "terraria.gif",
-        "tomato.png",
+        "tomato.webp",
         "trans.gif",
-        "trans2.png",
+        "trans2.webp",
         "troll.gif",
         "undertale.gif",
+        "undertale2.gif",
         "vocaloid.webp",
-        "wii.png",
-        "yuri.png",
-        "yuri2.png"
+        "wii.webp",
+        "yuri.webp",
+        "yuri2.webp"
     ]
 
     shuffle(stampImages);
     const $stampTrack = $("#stamp-carousel-track");
     stampImages.forEach(img => {
-        const $img = $(`<img src="assets/images/stamps/${img}" alt="${img}"/>`);
+        const $img = $(`<img src="assets/images/stamps/${img}" width="99" height="56" alt="${img}"/>`);
         $stampTrack.append($img);
     });
 
     stampImages.forEach(img => {
-        const $img = $(`<img src="assets/images/stamps/${img}" alt="${img}"/>`);
+        const $img = $(`<img src="assets/images/stamps/${img}" width="99" height="56" alt="${img}"/>`);
         $stampTrack.append($img);
     });
 
@@ -894,19 +760,45 @@ $(document).ready(function(){
     function autoScrollStampCarousel() {
       stampScrollPos += 1;
       if (stampScrollPos >= $stampTrack[0].scrollWidth / 2) stampScrollPos = 0;
-      $stampTrack.css("transform", `translateX(-${stampScrollPos}px)`);
+      $stampTrack.css("transform", `translate3d(-${stampScrollPos}px, 0, 0)`);
       requestAnimationFrame(autoScrollStampCarousel);
     }
     autoScrollStampCarousel();
 
     function syncMiddleHeight() {
-        var leftHeight = $(".column.left").outerHeight();
+        let leftHeight = $(".column.left").outerHeight();
         $(".column.middle").css("height", leftHeight + "px");
         $("#travel-log-window").css("max-height", leftHeight + "px");
     }
-    $(window).on("load resize", syncMiddleHeight);
 
+    function debounce(func, delay){
+        let timeoutId;
+        return function(...args){
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(this, args);
+            }, delay);
+        };
+    }
+    $(window).on("load resize", debounce(syncMiddleHeight, 250));
 
+    function syncInterestsQuizzesHeight(){
+        let $split = $(".abt-interests-quizzes:visible");
+        if($split.length === 0) return;
+        let $leftCol = $("#abt-interests-col-left");
+
+        // Temporarily remove flex and height to get natural left column height
+        $split.css({display: "block", height: "auto"});
+        $leftCol.css("height", "auto");
+        let leftHeight = $leftCol.outerHeight();
+
+        // Restore flex display
+        $split.css({display: "flex", height: leftHeight + "px"});
+        $leftCol.css("height", "");
+
+        // Debug output
+        console.log("Natural left column height:", leftHeight);
+    }
 })
 
 function startTime() {
@@ -927,6 +819,11 @@ function checkTime(i) {
 
 function generateCalendar(containerId) {
   const container = document.getElementById(containerId);
+
+  if(!container){
+    console.warn(`Container with ID '${containerId}' not found.`);
+    return;
+  }
   const now = new Date();
 
   const year = now.getFullYear();

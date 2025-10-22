@@ -1,3 +1,7 @@
+/* =====
+   FONTS
+   ===== */
+
 @font-face {
     font-family: lainFont;
     src: url('../fonts/TrixieCyrG-Plain\ Regular.otf');
@@ -11,6 +15,18 @@
 @font-face {
     font-family: minecraftFont;
     src: url('../fonts/Minecraftia.ttf');
+}
+
+/* =======
+   CURSORS
+   ======= */
+
+a, .nav-but, .player.button, .blog-toc a {
+    cursor: url('../images/cursors/nso_point.png'), auto;
+}
+
+.controlimg:hover, input[type="range"]::-webkit-slider-runnable-track, input[type="range"]::-moz-range-track {
+    cursor: url('../images/cursors/nso_helpselect.png'), auto;
 }
 
 body {
@@ -37,19 +53,10 @@ body {
     background-repeat: no-repeat
 }
 
-a {
-    cursor: url('../images/cursors/nso_point.png'), auto;
-}
-
 .nav-but {
-    cursor: url('../images/cursors/nso_point.png'), auto;
     min-width: 50px;
     display: block;
     font-size: 14px;
-}
-
-p {
-  font-size: 12px;
 }
 
 section {
@@ -61,11 +68,6 @@ section:first-child {
 
 h1, h3 {
     font-family: lainFont;
-}
-
-h2 {
-  font-family: lainFont;
-  font-size: 3.5rem;
 }
 
 h4 {
@@ -128,13 +130,9 @@ h4 {
     height: auto;
 }
 
-.left, .right {
-    width: 225px;
-}
+.left, .right { width: 225px; }
 
-.middle {
-    width: 775px;
-}
+.middle { width: 775px; }
 
 footer {
     text-align: center;
@@ -326,10 +324,6 @@ footer {
   to { opacity: 1; filter: blur(0); }
 }
 
-.controlimg:hover {
-    cursor: url('../images/cursors/nso_helpselect.png'), auto;
-}
-
 .songtitlewindow {
     background-color:#fff;
     box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
@@ -377,7 +371,6 @@ footer {
 
 .player-button {
     min-width: 50px;
-    cursor: url('../images/cursors/nso_point.png'), auto;
 }
 
 .controls {
@@ -497,19 +490,55 @@ input[type="range"] {
   input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 2px; /* thickness of seeking track */
-    cursor: url('../images/cursors/nso_helpselect.png'), auto;
   }  
     
     /* settings for firefox browsers */
 input[type=range]::-moz-range-track {
     width: 100%;
     height: 2px; /* thickness of seeking track */
-    cursor: url('../images/cursors/nso_helpselect.png'), auto;
 }
 
 .titlebaricon {
-    height:14px;
-    width:14px;
+    max-width: 14px;
+    height: auto;
+}
+
+.main-navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.main-navbar li {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.main-navbar a {
+  color: #222222;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.main-navbar a:hover, .main-navbar a:focus {
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+
+.nav-icon {
+  max-width: 100%;
+  height: auto;
+  margin-right: 8px;
+  image-rendering: pixelated;
 }
 
 .door-label {
@@ -544,7 +573,26 @@ input[type=range]::-moz-range-track {
 
 .door-img {
   border: 2px solid black;
-  height: 80px;
+  height: 76px;
+}
+
+#section-title-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 8px 0;
+  width: auto;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+#section-title-text {
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-size: 3.5rem;
+  font-family: lainFont;
 }
 
 .split-screen {
@@ -558,6 +606,25 @@ input[type=range]::-moz-range-track {
     box-sizing: border-box;
     height: auto;
     width: 345px;
+}
+
+.abt-interests-quizzes {
+  align-items: stretch;
+  display: flex;
+}
+
+.abt-interests-quizzes .abt-col {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.abt-interests-quizzes .abt-col:last-child {
+  overflow-y: auto;
+  height: 100%;
+  min-height: 0;
 }
 
 #mc-skin {
@@ -655,25 +722,52 @@ input[type=range]::-moz-range-track {
   font-size: 1.2em;
 }
 
+#mc-city-desc {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
 #mc-img-carousel {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  align-items: flex-start;
+  gap: 2rem;
   margin-bottom: 0.5rem;
 }
 
+.mc-img-carousel-left {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 350px;
+}
+
 #mc-img {
-  max-width: 350px;
-  max-height: 250px;
+  display: block;
+  width: 350px;
+  height: 250px;
+  margin-bottom: 1rem;
+  object-fit: cover;
   border: 2px solid #bbb;
   border-radius: 5px;
 }
 
+.mc-img-carousel-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.mc-img-carousel-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
 #mc-img-caption {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-style: italic;
+  font-size: 1rem;
+  padding: 1rem;
+  word-break: break-word;
 }
 
 #button-carousel-container {
@@ -726,22 +820,23 @@ input[type=range]::-moz-range-track {
   color: #3a2f0b;
 }
 
-.blog-toc, .blog-entry {
+.blog-toc, .blog-entry, .blog-toc h4, .blog-toc h5, .blog-toc ul, .blog-toc li, .blog-toc a, .blog-entry h4 {
   font-family: minecraftFont;
+}
+
+.blog-toc, .blog-entry {
   color: #3a2f0b;
 }
 .blog-toc {
   width: 50%;
   padding: 24px;
   border-right: 2px solid #c2b280;
-  font-family: minecraftFont;
   min-height: 403.917px;
 }
 
 .blog-toc h4 {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: minecraftFont;
 }
 
 .blog-toc h5 {
@@ -752,31 +847,25 @@ input[type=range]::-moz-range-track {
 .blog-toc ul {
   list-style: none;
   padding: 0;
-  font-family: minecraftFont;
 }
 
 .blog-toc li {
   margin-bottom: 12px;
-  font-family: minecraftFont;
 }
 
 .blog-toc a {
   text-decoration: underline;
   color: #6b4f1d;
   font-weight: bold;
-  cursor: url('../images/cursors/nso_point.png'), auto;
-  font-family: minecraftFont;
 }
 
 .blog-entry {
   width: 50%;
   padding: 24px;
   min-height: 403.917px;
-  font-family: minecraftFont;
 }
 
 .blog-entry h4 {
-  font-family: minecraftFont;
   margin-top: 0;
 }
 
@@ -832,26 +921,15 @@ input[type=range]::-moz-range-track {
   padding: 5px;
 }
 
-.travel-log-line {
+.travel-log-line, .travel-log-line2, .travel-log-line3 {
   width: 4px;
-  height: 70%;
   box-shadow: inset -1px -1px #565656, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
   margin-right: 3px;
 }
 
-.travel-log-line2 {
-  width: 4px;
-  height: 82px;
-  box-shadow: inset -1px -1px #565656, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-  margin-right: 3px;
-}
-
-.travel-log-line3 {
-  width: 4px;
-  height: 23px;
-  box-shadow: inset -1px -1px #565656, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
-  margin-right: 3px;
-}
+.travel-log-line { height: 70%; }
+.travel-log-line2 { height: 82px; }
+.travel-log-line3 { height: 23px; }
 
 .travel-log-line4 {
   width: 0px;
@@ -907,6 +985,7 @@ input[type=range]::-moz-range-track {
 }
 
   #travel-log-tree-tab {
+    display: none;
     background: #f3f3f3;
     border-right: 2px solid #c0c0c0;
     padding: 12px 8px;
@@ -1000,4 +1079,95 @@ input[type=range]::-moz-range-track {
 
 .future-plan-text p {
   margin-top: 0;
+}
+
+.abt-quiz img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+}
+
+#questionnaire span {
+  font-weight: bold;
+}
+
+#questionnaire p {
+  border-left: 1px dotted #BBBBBB;
+  margin: 5px 0 10px 15px;
+  padding: 0 0 0 10px;
+}
+
+/* Transparent scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(180,180,180,0.3); /* semi-transparent thumb */
+  border-radius: 6px;
+  border: 2px solid transparent;
+}
+
+/* Transparent scrollbar for Firefox */
+body, * {
+  scrollbar-color: rgba(180,180,180,0.3) transparent;
+  scrollbar-width: thin;
+}
+
+.small-id-button {
+  width: 109px;
+}
+
+.small-leftcol-button {
+  width: 96px;
+}
+
+.mc-gallery-bg {
+  background: url('../images/sign.jpg') center center/cover no-repeat;
+  font-family: minecraftFont;
+    font-size: 16px;
+    color: white;
+    text-shadow: 0 3px 5px #000000;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid #3d2b0a;
+}
+
+#moon-monitor .window-body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-page .fake-screen {
+  background-color: #163540;
+}
+
+.minecraft-page .fake-screen {
+  background-color: #4f1424;
+}
+
+.resources-page .fake-screen {
+  background-color: #3a273b;
+}
+
+#bio-pic {
+  float: left;
+  height: auto;
+  max-width: 125px;
+  border: 2px solid gray;
+  margin: 16px 16px 16px auto;
+  filter: grayscale(1);
+  border-radius: 10px;
+}
+
+#bio-pic:hover {
+  filter: grayscale(0);
+}
+
+#quote {
+  color: white;
+  text-align: center;
 }
